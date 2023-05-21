@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid in CSS</title>
+</head>
+<!-- visit link: https://www.youtube.com/watch?v=ii_Ykb2DqZc&t=6s and https://www.w3schools.com/css/css_grid.asp
+
+    -> Grid property: used to maintain div's in 2d manner
+                      The CSS Grid Layout Module offers a grid-based layout system, with rows 
+                      and columns, making it easier to design web pages without having to use 
+                      floats and positioning.
+    :it also contains container (div becomes grid container by setting its display property to grid)
+    ->grid container properties: gap, grid-template-columns, grid-template-rows, justify-content,
+                                    align-content, align-items
+-->
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container{
+        border: 2px solid red;
+        display: grid; 
+        /*now this is container : this line won't effect alot because by default
+                        grid works top to bottom*/
+
+        /*grid container properties*/
+    /*-> gap : gap will be in between childs we can use row-gap: and column-gap: or for both gap:*/
+        gap: 10px;
+         /*10px row gap and 10px column gap*/
+
+    /*-> grid-template-columns: used to make columns / used to define width of columns */
+
+        /* grid-template-columns: 100px 200px 300px ;  */
+        /*makes three columns with width 100px,200px,300px*/
+
+        /* grid-template-columns: 100px 200px; */
+        /*makes two columns*/
+
+        /* grid-template-columns: 20vh 200px 300px; */
+
+        /* grid-template-columns: 30% 70%; */
+        /*one column will take 30% of the screen size and the other will take 70%*/
+
+        /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+        /*creates 4 columns of similar width i.e whole width is divided into 4 and every part will take 1fr i.e 1/4th */
+
+        /* grid-template-columns: 1fr 1fr 1fr; */
+        /* 3 columns with equal width*/
+
+        /* grid-template-columns: 2fr 1fr 1fr 1fr; */
+        /* 2fr will take double the width of rest 3 i.e total is 5fr so 2fr is taken by first column*/
+
+        /*important*/
+        /* grid-template-columns: repeat(4,1fr); */
+        /*means main 4bar repeate karna chahta hoon 1fr : 1fr 1fr 1fr 1fr*/
+
+        /* grid-template-columns: repeat(4,100px); */
+        /* makes 4 columns with the width of 100px each and the remaining screen will be empty*/
+
+        /* grid-template-columns: auto auto; */
+        /*makes 2 columns with equal width*/
+
+        /* grid-template-columns: auto auto auto; */
+        /*makes 3 columns with equal width*/
+
+        /* grid-template-columns: 200px auto; */
+        /* 1 column is off 200px width and the 2 column will take the remaining width*/
+
+        /*Note: Its better to use 1fr inplace of auto*/
+
+        /*going to keep the things simple for now with just 2 columns of 200px */
+        grid-template-columns:200px 200px;
+    
+    /*-> grid-template-rows: used to define height of columns / also helps in creating rows */
+        /* grid-template-rows: 200px 80px; */
+        /* 1 row will have 200px of height and 2 will have 80px and remining row will take height according to their requirment*/
+
+        /* grid-template-rows: 200px 80px;*/
+        /* grid-auto-rows: 100px; */
+        /* 100px height wille be set to remaining rows, jinki apne height nanhi define karii */
+
+    /*-> justify-content: used to align items in x-direction/ in row direction */
+        /* justify-content: center;  */
+        /*now the columns will be in center : justify content will not work if you use 'fr' above */
+
+        /* justify-content: space-between; */
+        /* justify-content: space-around; */
+        /* justify-content: end; */
+        /* justify-content: space-evenly; */
+
+    /*-> align-content: used to align items in y-direction/ in column/vertically direction */
+        /*to use align-content , lets first give our conatiner some height "although its growing according to content inside it"*/
+                /* height:400px; */
+                 /*you will see the content inside it also grows becuase by 
+                              default -> align-content:stretch*/
+        /* align-content: center; */
+        /*align-content:stretch; by default*/
+        /* align-content:flex-end; */
+        /* align-content:flex-start; */
+        /* align-content:space-around; */
+        /* align-content:space-between; */
+        /* align-content:space-evenly; */
+
+    /*-> align-items: watch at 15:40 : */
+        /* align-items: flex-start; *//*also see its many properties */
+    
+    }
+    .box{
+        border: 2px solid blue;
+        padding: 12px;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="box" id="box-1">box-1</div>
+        <div class="box" id="box-2">box-2</div>
+        <div class="box" id="box-3">box-3</div>
+        <div class="box" id="box-4">box-4</div>
+        <div class="box" id="box-5">box-5</div>
+        <div class="box" id="box-6">box-6</div>
+        <div class="box" id="box-7">box-7</div>
+        <div class="box" id="box-8">box-8</div>
+        <div class="box" id="box-9">box-9</div>
+        <div class="box" id="box-10">box-10</div>
+    </div>
+</body>
+</html>

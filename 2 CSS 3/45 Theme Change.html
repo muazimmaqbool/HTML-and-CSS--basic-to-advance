@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Change</title>
+    <!-- toggle between dark mode and light mode : first see previous codes-->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root{
+            --varPX:5px;
+            --varCL:rgb(97, 93, 93);
+            --box-bg-color:white;
+            --container-bg-color:rgb(184, 174, 174);
+            --primary-text-color:#222;
+            --default-PX:30px;
+        }
+        .dark{
+            --varCL:whitesmoke;
+            --box-bg-color:#111;
+            --container-bg-color:#333;
+            --primary-text-color:white;
+        }
+        /*app jisko b ye dark class mile ga aus ke liye ye sari variables override hongi*/
+        
+         .container{
+            padding: 40px;
+            --var2:italic;
+            background-color:var(--container-bg-color);
+            min-height: 100vh;
+            min-width: 100vw;
+        }
+        h1{
+            text-align: center;
+            color: var(--primary-text-color);
+            font-style: var(--var2);
+            letter-spacing: var(--varPX);
+            
+        }
+        .box{
+            padding: var(--default-PX); 
+            --var2:monospace;
+            background-color: var(--box-bg-color);
+            margin-block: var(--default-PX);
+            border-radius: var(--default-PX);
+        }
+        h2{
+            margin-bottom: var(--default-PX);
+            text-align: center;
+            font-family: var(--var2);
+            letter-spacing: var(--varPX); 
+            color: var(--primary-text-color);
+        }
+        p{
+            color:var(--varCL);
+        }
+        #theme-change{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            right:50px;
+            cursor: pointer;
+            color: white;
+            background-color: #111;
+        }
+
+        @media screen and (max-width:450px) {
+            #theme-change{
+                height: 40px;
+                width: 40px;
+                font-size: 10px;
+                top: 10px;
+                right: 10px;
+            }
+            h1{
+                font-size: 1.5rem;
+                text-decoration: underline;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+<!-- <body class="dark"> -->
+    <!-- now whole website will have dark theme if you remove this class dark it becomes light theme-->
+    <div class="container ">
+        <button id="theme-change">Dark Mode</button>    
+        <h1>Nature Park</h1>
+        <div class="box">
+            <h2>Water Falls</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex, illum laborum. Voluptatum modi fugit officia?
+            </p>
+        </div>
+        <div class="box">
+            <h2>Hills</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex, illum laborum. Voluptatum modi fugit officia?
+            </p>
+        </div>
+        <div class="box">
+            <h2>Snow Mountains</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex, illum laborum. Voluptatum modi fugit officia?
+            </p>
+        </div>
+    </div>
+    <script>
+        document.getElementById("theme-change").onclick=function(){
+            //document.body.classList.add('dark');
+            //this way it will not get back to light mode
+             //instead use this
+             document.body.classList.toggle("dark");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overflow in CSS</title>
+    <!-- visit: https://www.youtube.com/watch?v=FQfNAOwzp5Y 
+    
+    -> CSS Overflow:
+        The css overflow property controls what happens to content that is too big to fit into an area
+        overflow values: visible, hidden, scroll, auto.
+
+        By default by overflow property is visible in paragraph
+    -->
+    <style>
+      .container {
+        width: 400px;
+        height: 400px;
+        border: 2px solid green;
+        /*You will see that some text is out of the container*/
+
+        /* overflow: hidden;  */
+        /*Now the text which was out of the container is hidden*/
+
+        /* overflow: scroll;  */
+        /*Now you will be able to scroll inside container to see all text*/
+        /*Note: when using overflow:scroll you will see scroll all the time even though the container 
+            is empty or have few line of text inside it and to solve this we use overflow:auto*/
+
+        overflow: auto; 
+        /*Now you will see scroll only when text is more then the size of container */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam quaerat
+        delectus iste veritatis commodi alias hic laboriosam quod, unde ipsa
+        laudantium sint natus accusantium, perspiciatis ea temporibus dolore
+        iure ad blanditiis officiis voluptates incidunt a explicabo quo.
+        Perspiciatis voluptas aliquid inventore aliquam, minus illo eos vel
+        dicta dolore commodi non tenetur expedita ut ratione obcaecati dolorem
+        eius! Voluptate officiis sed eligendi sint pariatur tenetur, ut
+        voluptatum deserunt atque corporis ullam veniam doloremque quod aut
+        libero omnis deleniti assumenda placeat a veritatis. Modi provident
+        suscipit nesciunt fugit possimus eos, neque excepturi, ducimus
+        distinctio deserunt beatae id et accusantium obcaecati? Nemo ipsam unde
+        autem soluta optio excepturi sequi laborum distinctio eaque dolores
+        velit maxime, error corporis quos provident tenetur maiores recusandae
+        explicabo ipsa officia perspiciatis voluptas? Velit perferendis
+        doloremque dicta nobis. Reiciendis eligendi consequuntur dolor
+        praesentium. Dolorem, itaque eligendi alias esse quae facilis ducimus
+        perferendis sit praesentium quia iure, hic laborum eos numquam repellat.
+        Quae sequi aliquid, nesciunt est sit repudiandae fugit? Facere sapiente
+        distinctio placeat sit, voluptatem tempore molestiae consequatur magnam
+        facilis veritatis similique eos quam ratione totam sequi rem omnis
+        voluptatum quasi perspiciatis reprehenderit! Quos voluptates iste culpa
+        doloremque nobis exercitationem, reiciendis repudiandae qui accusamus
+        laboriosam provident nisi. Amet, in!
+      </p>
+    </div>
+  </body>
+</html>

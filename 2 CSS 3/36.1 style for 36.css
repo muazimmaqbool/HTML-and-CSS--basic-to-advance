@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Lato', sans-serif;
+}
+.outerbox{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to top left,#3ed8ff,#a8f5ff);
+}
+.innerbox{
+    width: 400px;
+    margin: 0 auto;
+    /*by setting margin auto on left and right side it will set it in center of its parents*/
+    position: relative;
+    top: 40%;
+    /*now it will start from 40% from the top and to make it in proper center
+    , jitnii b iski height hain auska 50% ye upper chale jaye for that we use below line*/
+    transform: translateY(-50%);
+    padding: 20px 40px;
+    /* background-color: white; */
+    /*making its background blur*/
+    background: linear-gradient(to top left,#ffffff,#ffffff33);
+    border-radius: 8px;
+    box-shadow: 5px 5px 5px #2373a8;
+    /*5px right 5px down and 5px of blur*/
+    z-index: 2;
+    
+}
+.signup-header h1{
+    font-size: 3rem;
+    color: #212121;
+}
+.signup-header p{
+    font-size: 1rem;
+    color: #555;
+}
+.signup-body{
+    margin: 20px 0;
+}
+.signup-body p{
+    margin: 15px 0;
+}
+.signup-body p label{
+    display: block;
+    font-weight: bold;
+}
+.signup-body p input{
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #cccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-top: 5px;
+}
+/*selecting submit */
+.signup-body p input[type="submit"]{
+    background-color: #3498db;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.signup-body p input[type="submit"]:hover{
+    background-color: #1e5c85;
+}
+.signup-footer p{
+    color: #555;
+    text-align: center;
+}
+.signup-footer p a{
+    color: #1e5c85;
+    text-decoration: none;
+}
+.signup-footer p a:hover{
+    text-decoration: underline;
+}
+
+/*styling two circles which are in outerbox*/
+.circle{
+    width: 200px;
+    height: 200px;
+    border-radius: 100px; /* or  border-radius: 50%;*/
+    background: linear-gradient(to top right,#ffffff33,#ffffff);
+    position: absolute; /*will work relative to body/root/html*/
+}
+.c1{
+    top:100px;
+    left: 40px;
+}
+.c2{
+    bottom: 200px;
+    right: 50px;
+}

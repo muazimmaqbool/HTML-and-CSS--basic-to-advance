@@ -1,0 +1,78 @@
+ <html lang="en">
+    <head>
+         <title>Borders</title></title>
+         <!--The CSS border properties allow you to specify the style, width, and color of an
+             element's border. 
+             I can have borders on all sides. I have a red bottom border. I have rounded borders.-->
+         <style type="text/css">
+            .square{
+                width: 100px;
+                height:100px;
+                margin: 30px; /*Seperates the boxes apart*/
+            }
+            body{
+                background:rgb(167, 187, 131);
+                font-size: 20px;
+                font-weight: bold;
+            }
+            
+            #red{
+                background-color: red;
+                border: 10px black solid; /* width of border , color of border , style of the border */
+                /*see different style of border in google
+                dotted - Defines a dotted border
+                dashed - Defines a dashed border
+                solid - Defines a solid border
+                double - Defines a double border
+                groove - Defines a 3D grooved border. The effect depends on the border-color value
+                ridge - Defines a 3D ridged border. The effect depends on the border-color value
+                inset - Defines a 3D inset border. The effect depends on the border-color value
+                outset - Defines a 3D outset border. The effect depends on the border-color value
+                none - Defines no border
+                hidden - Defines a hidden border
+                */
+                
+            }
+            #blue{
+                background-color:blue;
+                border: 10px yellow dashed;
+            }
+            #green{
+                background-color:green;
+                border: 10px yellow dotted;
+                float: left;
+            }
+            #pink{
+                background-color: pink;
+                border: 10px yellow inset;  
+                outline: 10px blue outset;
+                float: left;
+                margin-top:-300px;
+            }
+            #orange{
+                background-color: orange;
+                border: 10px rgb(0, 0, 0) double;
+                float: left;
+                margin-top: -100px;
+            }
+         </style>
+    </head>
+    <body>
+        <div id="red" class="square">
+            solid
+        </div>
+        <div id="blue" class="square">
+            dashed
+        </div>
+        <div id="green" class="square">
+            dotted
+        </div>
+        <div id="pink" class="square">
+            inset and outset<br>
+            and outline
+        </div>
+        <div id="orange" class="square">
+            double
+        </div>
+    </body>
+</html>

@@ -1,0 +1,73 @@
+<html lang="en">
+    <head><title>Selectors</title>
+    <!--
+        -> A CSS selector selects the HTML element(s) you want to style.
+        We can divide CSS selectors into five categories:
+            Simple selectors (select elements based on name, id, class)
+            Combinator selectors (select elements based on a specific relationship between them)
+            Pseudo-class selectors (select elements based on a certain state)
+            Pseudo-elements selectors (select and style a part of an element)
+            Attribute selectors (select elements based on an attribute or attribute value)
+        -> id's and classes are also dicussed before in code 3 
+            visit: https://www.w3schools.com/css/css_selectors.asp
+    -->
+    <style type="text/css">
+       /* all <p> elements  will be selected*/
+        p{
+            text-align: center;
+            color: blue;
+            font-size:large;
+        }
+        /* will only select element with id = three | Note: An id name cannot start with a number! */
+        #three{
+            font-size: larger;
+            text-align:end;
+        }
+        .start{
+            text-align: start;
+        }
+        /* <p> elements with class="green" will be selected like this p.green{...}*/
+        .green{ /*if i use here p.green then this class will be only applicable on p tag with class green*/
+            color: green;
+            font-weight: bold;
+        }
+        .center{
+            text-align: center;
+        }
+        .red{
+            color: red;
+        }
+        /* The universal selector (*) selects all HTML elements on the page. */
+        *{
+            font-family: cursive;
+            font-style: italic;
+        }
+
+        /*Group selector : To group selectors, separate each selector with a comma.*/
+        h3,h4,h5{
+            background-color: aqua;
+        }
+    </style>
+    </head>
+    <body>
+        <p>Line number one</p>
+        <p>Line number two</p>
+        <p id="three">Line with id three</p>
+        <p class="start">Line with class start</p>
+        <p class="start">Line2 with class start</p>
+        <p class="green">Line with class green</p>
+        <h4 class="green">h4 with class green</h4>
+        <h3 class="center red">Line with class center and red</h4>
+        <h5 class="center" style="color:blue;" >Background changed via group selector and it has class center</h4>
+    </body>
+</html>
+<!--
+     Selector	             Example	            Example description
+
+    #id	                    #firstname	    Selects the element with id="firstname"
+    .class	                  .intro	    Selects all elements with class="intro"
+    element.class	          p.intro	    Selects only <p> elements with class="intro"
+    *	                        *	        Selects all elements
+    element	                    p	        Selects all <p> elements
+    element,element,..	       div, p	    Selects all <div> elements and all <p> elements
+-->

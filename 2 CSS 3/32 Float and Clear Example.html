@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float and Clear Example</title>
+</head>
+<!-- from 5:45  https://www.youtube.com/watch?v=FQfNAOwzp5Y&t=862s -->
+<style>
+    *{
+        box-sizing: border-box ; /*now we define width and height with border */
+    }
+    .bigbox{
+        width: 400px;
+        height: 400px;
+        background-color: grey;
+    }
+    .box{
+        width: 100px;
+        height: 100px;
+        border: 2px solid black;/*with border of 2px the boxes might be little out of the bigbox 
+                          but if you use box-sizing:border-box they will not come out of the big box*/ 
+        /* float:left;  */
+        /*All boxes will come in one row next to each other : b1,b2,b3,b4*/
+        /*Let's try floating on each of them seperatly but first use overflow:auto*/
+        overflow:auto /*Important to use this   */
+    }
+    .b1{
+        background-color:aqua;
+        float: left; 
+        /*box2 will come next to box1 i.e on the right side of box1*/
+    }
+    .b2{
+        background-color:green;
+        float: left; 
+        /*b3 comes in right of b2*/
+    }
+    .b3{
+        background-color:greenyellow;
+        float: left; 
+        /*b4 comes in right of b3*/
+        /*Note: watch video at 19:00 */
+    }
+    .b4{
+        background-color:orchid;
+        clear: left;
+        /*Now b4 will come below the abve 3 boxes*/
+    }
+    /*Remember only use float and clear with text and images*/
+</style>
+<body>
+    <div class="bigbox">
+        <div class="box b1">Box 1</div>
+        <div class="box b2">Box 2</div>
+        <div class="box b3">Box 3</div>
+        <div class="box b4">Box 4</div>
+    </div>
+</body>
+</html>

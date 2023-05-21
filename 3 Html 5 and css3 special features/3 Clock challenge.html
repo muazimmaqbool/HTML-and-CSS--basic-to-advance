@@ -1,0 +1,93 @@
+<html lang="en">
+    <head><title>Clock Using Canvas</title>
+    <style type="text/css">
+
+    </style>
+    </head>
+    <body>
+        <canvas id="clock" width="500" height="500">
+        </canvas>
+
+    <script type="text/javascript">
+        //updating clock everytime/second using a function :
+        function setTime(){
+
+
+        var canvas=document.getElementById("clock");
+        var context=canvas.getContext("2d");
+        //specifying the radius of the clock(half of the width of the canvas)
+        var clockRadius=canvas.width/2;
+        //alert(clockRadius);
+
+        //draw circle of the clock
+        context.beginPath();
+        context.fillStyle="black";
+        context.arc(clockRadius,clockRadius, clockRadius, 0, 2*Math.PI);
+        //first two clockRadius is center of the circle, 3rd clockRadius is the radius of the circle
+        // 0 is the starting position of the ars and Math.PI is half the circle and 2*Math.PI is full circle
+        context.fill(); //fills the circle with black color(black color is by default)
+        
+        //text inside the clock/circle
+        context.font=clockRadius/10 + "px bold"; //font size is clockRadius/10 px
+        context.fillStyle="white";
+        context.textAlign="center";
+        context.textBaseLine="middle";
+        //context.fillText("12",clockRadius,clockRadius-(clockRadius*0.9)); //optional.  but if you not use this
+                                                                                       // use i<=12 in for
+
+        //important from 7:00
+        // context.fillText("1",clockRadius+ clockRadius*0.9 * Math.sin(2*Math.PI/12),clockRadius-(clockRadius*0.9* Math.cos(2* Math.PI/12)));
+        for(var i=1;i<=12;i++){
+            context.fillText(i,clockRadius+ clockRadius*0.9 * Math.sin(i*2*Math.PI/12),clockRadius
+            -(clockRadius*0.9* Math.cos(i*2* Math.PI/12)));
+        }
+    
+        //Clock hands
+        var hours =new Date().getHours();
+        var minutes=new Date().getMinutes();
+        var seconds=new Date().getSeconds();
+
+        // watch at 11:40
+        //converting hours from 24 to 12hours
+        var fullhours=hours%12+ minutes/60+ seconds/3600;
+
+        var hoursAngle=fullhours* 2*Math.PI/12;
+        var minutesAngle=minutes* 2*Math.PI/60;
+        var secondsAngle=seconds* 2*Math.PI/60;
+
+        //for hour hand
+        context.strokeStyle="white";
+        context.moveTo(clockRadius,clockRadius);
+        context.lineTo(clockRadius+ clockRadius*0.6 * Math.sin(hoursAngle), clockRadius
+            -(clockRadius*0.6 * Math.cos(hoursAngle)));
+        context.lineWidth="5";
+       
+        context.stroke();
+
+        //for minute hand
+        context.moveTo(clockRadius,clockRadius);
+        context.lineTo(clockRadius+ clockRadius*0.7 * Math.sin(minutesAngle), clockRadius
+            -(clockRadius*0.7 * Math.cos(minutesAngle)));
+        context.lineWidth=3;
+        context.stroke();
+
+        //for seconds hand
+        context.moveTo(clockRadius,clockRadius);
+        context.lineTo(clockRadius+ clockRadius*0.9 * Math.sin(secondsAngle), clockRadius
+            -(clockRadius*0.9 * Math.cos(secondsAngle)));
+        context.lineWidth=2;
+        context.stroke();
+
+        //small circle in the middle
+        context.beginPath();
+        context.arc(clockRadius,clockRadius, 10, 0, 2*Math.PI);
+        context.fill();
+        context.fillStyle="white";
+
+
+        }
+        //calling function every seconds
+        setInterval(setTime,1000);
+    </script>
+    </body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Child</title>
+</head>
+<!--
+    First see previous code: at 19:15
+-> Flex Child: The direct child elements of a flex container automatically becomes flexible(flex) items.
+        flex children properties: order,flex-grow,flex-shrink,flex-basis,flex,align-self
+    ->These properties can be applied to children (in our code the children is box or we can give them different id's and
+    give them different flex properties (watch at 19:30 ))
+-->
+<style>
+     *{
+        box-sizing: border-box;
+    }
+    .container{
+        height: 400px;
+        border: 2px solid green;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: row; 
+        align-content: space-evenly;
+    }
+    .box{
+        border: 2px solid blue;
+        width: 80px;
+        /* flex-basis: 25%; */
+        /*here each element will be having 25% of width by default*/
+    }
+
+/* -> Order property 
+   #box-1{
+        order: 1; 
+        /* now box-1 will come at last because it has highest order
+    }
+    #box-3{
+        order: 2; 
+        /*Now box-3 will come at last after box-1 because of highest order
+    }
+    Note: This is not good practice to give order to boxes like this , juts arrange them in the order you want
+    and avoid using order property
+    */ 
+
+/* -> flex-grow: it tells a particular child to grow (it's by default property is 0)
+   -> flex-shrink:it will shrink an element faster than other (it's by default property is 1 , so you need to give it value more than 1 to shrink
+   -> flex-basis: you can tell that on main-axis(x-axis) direction what will be initial width of 
+      a particular element
+    -> flex : its a shorthand property for flex-grow,flex-shrink,flex-basis     
+    -> align-self: used to make a element on cross-axis(y-axis)   
+   */
+   #box-1{
+        /* flex-grow: 1; */
+        /*It will take all the remaining space in its parent i.e container*/
+
+        /* flex-shrink: 2;  */
+        /*when you change the screen size the all elements start shrinking but box-1 will shrink faster
+        By this way you can tell which element will shrink first*/
+
+        /* flex-basis: 150px;  */
+        /*the default of box-1 will be 150px*/
+        
+        flex:0 0 200px;
+        /* means, flex-grow:0 , flex-shrink:0, flex-basis:200px and now it won't shrink no matter what to make it shrink like other then set its flex-shrink to 1*/
+
+        align-self:flex-start;
+        /* will on top i.e on y-axis/cross-axis also try other properties , flex-end, stretch etc*/
+    
+    }
+    #box-3{
+        /* flex-grow: 2; */
+        /*now box-3 will grow faster then box-1*/
+    }
+    #box-4{
+        /* flex-shrink: 3; */
+        /*box-4 will shrink faster than box-1*/
+    }
+</style>
+<body>
+    <!-- using : .container>.box#box-${box-$}*8 -->
+    <div class="container">
+        <div class="box" id="box-1">box-1</div>
+        <div class="box" id="box-2">box-2</div>
+        <div class="box" id="box-3">box-3</div>
+        <div class="box" id="box-4">box-4</div>
+        <div class="box" id="box-5">box-5</div>
+        <div class="box" id="box-6">box-6</div>
+        <div class="box" id="box-7">box-7</div>
+        <div class="box" id="box-8">box-8</div>
+        
+    </div>
+</body>
+</html>

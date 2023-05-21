@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries 2</title>
+    <!-- first see previous program-->
+</head>
+<style>
+    body{
+        background-color: turquoise;
+    }
+    @media (min-width:400px) and (max-width:600px){
+        /*or write it like this @media (400px <= width <= 600px ) : this will also work the same way*/
+        body{
+            background-color: blue;
+            /*will be applied when min-width becomes 400px and max-width becomes 600px
+            So, this will be applied in the range of 400px to 600px
+            */
+        }
+    }
+    @media (max-width:300px){
+        body{
+            background-color: green;
+        }
+    }
+    /*
+    
+    @media screen : means to set your media query for screen
+    @media print: means to set your media query when your website will be printed
+
+    usually we write @media screen and (width size) : 'and' is important to write
+    */
+</style>
+<body>
+    
+</body>
+</html>

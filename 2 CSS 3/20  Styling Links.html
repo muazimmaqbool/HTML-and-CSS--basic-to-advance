@@ -1,0 +1,32 @@
+<html lang="en">
+    <head><title> Styling Links</title>
+        <style type="text/css">
+        a{
+            text-decoration: none;
+            font-size:200%;
+        }
+        a:hover{
+            text-decoration: underline;
+            color: brown;
+         }
+
+         /*Changing how link looks like when user has been there.
+         standard color for not visited site link is : blue
+         standard color for visited site is : pruple.
+         but we can change it using visited*/
+         a:visited{
+            color: green; /*Changing color of visited links to yellow*/
+         }
+         /* Visit pseudo classes links in w3schools*/
+        </style>
+    </head>
+    <body>
+        Link color will be changed to green after visiting<br>
+        <a href="https://www.google.com">Google Website</a>
+
+        <!-- Opening link in new tab-->
+        <a href="https://www.google.com" target="_blank"><br>Goole in a new tab</a>
+        <a href="https://www.youtube.com" target="_blank"><br>Link Not visited before </a>
+
+    </body>
+</html>

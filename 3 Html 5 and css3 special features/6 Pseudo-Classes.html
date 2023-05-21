@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><title>Pseudo Classes</title>
+        <!--A CSS pseudo-class is a keyword added to a selector that specifies a special state of the selected element(s).
+             For example, :hover can be used to change a button's color when the user's pointer hovers over it-->
+    <style>
+        .green{
+            font-weight: bold;
+            font-size: 150%;
+            color: green;
+        }
+        a:hover{
+            background-color: black;
+            color: white;
+        }
+        
+        /*there are many more pseudo classes*/
+
+        input:focus{ /* when user clicks on input text-box its background color changes */
+            background-color: aqua;
+        }
+        /*we can do lot more with input/form elements like: 
+        we can set enabled and disabled on the input fields we can customize the check and radio boxes*/
+        /* input:enabled{}
+        input:disabled{}
+        input:checked{} */
+
+        /*selecting elements based location : like selecting first p in each of their containing elements
+        / in our example first paragraph in each div*/
+        p:first-child{ /* will select only that p which is the first child/ first element of the parent element     */
+            background-color: yellowgreen;
+            width: fit-content;
+        }
+        p:last-child{  /* will select only that p which is the last child/ last element of the parent element     */
+            font-size: 150%;
+            font-style: italic;
+        }
+        p:only-child{ /* will select p if its the only child/element of the parent element     */
+            color:brown;
+        }
+        p:first-of-type{ /* select first p in which div/parent */
+            text-decoration: underline;
+        }
+        /* we can also use , :last-of-type and :only-of-type   (watch at 4:30)*/
+        
+        /* watch at 5:00 to 7:30 its important*/
+
+        /*selecting empty divs*/
+        div:empty{
+            display: none;
+        }
+        p:not(.green){ /*selecting all p's which don't have class green*/
+            font-size: 120%;
+        }
+        :not(div){
+            /*selects everything thats not  a div*/
+        }
+
+        /*Selecting first latter of p*/
+        p:first-letter{  /* or  ::first-latter */
+            background-color: black;
+            color: white;
+            font-size: 150%;
+        }
+        /* we cal also use :first-line */
+
+        /* watch at 9:30 : before and after also see its code in css3 folder*/
+
+    </style>
+    </head>
+    <body>
+        <a href="#">I'm Link</a>
+        <input type="text" >
+        <div></div>
+        <div>
+            <h3>I'm H3 in first div</h3>
+            <p>I'm Paragraph</p>
+            <p class="green">I'm paragraph in First div</p>
+            <a href="#">I'm Link</a>
+            <p>I'm last paragraph in first div</p>
+        </div>
+        <div>
+            <p>I'm paragraph  in another 2 div</p>
+            <h5>I'm h5 in another 2 div</h5>
+        </div>
+        
+        <div>
+            <p>I'm paragraph first and last in another div - only p in this div</p>
+        </div>
+        <p>first paragraph in body</p>
+    </body>
+</html>

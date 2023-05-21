@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform Property</title>
+    <style>
+        /*
+        ->The transform property applies a 2D or 3D transformation to an element. This property allows 
+          you to rotate,scale,skew,traslate,... to the elements
+        */
+        .container{
+            background-color: blue;
+            width: 300px;
+            height: 300px;
+            margin: 50px auto;
+        }
+        .box{
+            background-color: tomato;
+            width: 150px;
+            height: 150px;
+            font-size: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /*-> transform:scale() : makes any element big or small in x and y direction*/
+           
+            /* transform: scale(1); default value is one */
+            /* transform: scale(0.5); becomes small in both x and y direction*/
+            /* transform: scale(2); becomes double of its origin width and height now its of 300px of width and height  */
+            /* transform: scaleX(2); becomes big in X direction */
+            /* transform: scaleY(0.5); becomes small in Y direction */
+            /* transform: scaleX(2) scaleY(1.5); 2 times big in x direction and 1.5 times big in y direction */
+            /* transform: scale(2,1.5); same as above 2 in x and 1.5 in y direction */
+            /* also there is scaleZ(2) it will be seen in 3d model actually its comming out of computer screen*/
+            
+            /*-> transform:skew()*/
+
+            /* transform: skew(20deg,30deg); 20deg with x and 30deg with y direction  */
+            /* transform: skew(0deg,30deg); */
+            /* transform: skew(20deg); this will only be in x direction */
+            /* transform: skewY(20deg); */
+            /* transform: skewY(50deg); */
+
+            /*->transform:translate : moving an element*/
+
+            /* transform: translate(20px); moves 20px towards right i.e in x direction */
+            /* transform: translate(20px,40px); /*20px in x and 40px in y direction */
+            /* transform: translate(-30px,-50px); */
+            /*we can also use px,rem,% etc*/
+            /* transform: translate(50%); will move 50% of its width i.e 75% in x direction */
+            /* transform: translate(50%,50%); now it will be in center */
+            /* transform: translateX(20px); */
+            /* transform: translateY(60px); */
+
+            /*-> transform:rotate()*/
+            /* transform: rotate(30deg); better to use this only this move around z direction*/
+            /* transform: rotateX(80deg); */
+            /* transform: rotateX(80deg); */
+            
+             /*using all above 4 transform properties together*/
+             transform: rotate(20deg) scale(1.2) skew(25deg) translate(45px);
+
+        }
+
+    </style>
+</head>
+<body>
+     <div class="container">
+        <div class="box">BOX</div>
+     </div>
+</body>
+</html>

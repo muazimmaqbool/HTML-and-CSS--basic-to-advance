@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transitions</title>
+    <style>
+        /*
+        -> CSS transitions allow you to change property values smoothly, over a given duration.
+          {basically its used to put transition between transformation}
+        ->To create transition effect, you must specify two things: 1) the css property you want to add , 2) the duration of the effect
+        ->Transition property values: transition-delay, transition-duration, transition-property, transition-timing-function 
+
+        NOTE: if duration part is not specified the transition will have no effect, because the default value is 0
+        ->Note: with transitions we can only tell its from and to start (kahan se kahan jana hain)
+        */
+        .box{
+            margin: 100px auto;
+            width: 200px;
+            height: 200px;
+            background-color: teal;
+
+            /*defining how its color have on hover*/
+
+            /*-> transition-duration*/
+            /* transition: 0.5s; this is short hand for transition-duration */
+            transition-duration: 1s;
+
+            /*-> transition-property */
+            /*Here we define on which property we want to transition {means: kya hum background-color main transition karna chahte hain
+                , kya hum border-radius main transition karna chahte hain etc...*/
+            /* transition-property: background-color; here only background-color changes in 1s */
+            /* transition-property: border-radius; here only border-radius change in 1s */
+            /* transition-property: background-color, border-radius; */
+            /* transition-property: all; selects all elements */
+
+            /*Note : transition-property:all; is sometimes not good practice, it may slow down the website because many pc's have less CPU power , selecting all , the css rendrer check all transition and it use much CPU power*/
+            /*instead of all just define on which properties you want to do transition like this: transition-property: background-color, border-radius;  */
+            transition-property: background-color, border-radius, transform;
+            
+            /*-> transition-delay : transition starts late*/
+            transition-delay: 0.2s;
+
+            /*-> transition-timing-function */
+            /*It defines how you move from point A to point B */
+            /*its values transition-timing-function: ease,lines,ease-in,ease-out,ease-in-out,cubic-bezier(n,n,n,n)*/
+            
+            transition-timing-function: ease;  /* this is default : its slow start then fast then slow end*/
+            /* transition-timing-function: ease-in;     slow start */
+            /* transition-timing-function: ease-out;    slow end */
+            /* transition-timing-function: linear;    same speed throughout */
+            /* transition-timing-function: ease-in-out   slow start and end */
+            /*transition-timing-function:cubic-bezier : lets you define your own value in a cubic-bezier function*/
+            /* transition-timing-function: cubic-bezier(0.69,-0.52, 0.22, 1.51) */
+       
+        /*Note: never define transition in the hover*/
+        }
+        .box:hover{
+            background-color: purple;
+            border-radius: 50%;
+            transform: rotate(180deg);
+            transform: scale(1.5);
+        }
+
+
+        /*using transition here : example*/
+        .list{
+           display: flex;
+           gap: 20px;
+           list-style: none;
+        }
+        .item{
+            font-size: 2rem;
+            padding: 8px 10px;
+            transition: 0.5s ease;
+            /* 0.5s is duration*/
+        }
+        .item:hover{
+            cursor: pointer;
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+            transform: translateY(-10px);
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+    <ul class="list">
+        <li class="item">About</li>
+        <li class="item">Home</li>
+        <li class="item">Product</li>
+        <li class="item">Login</li>
+    </ul>
+</body>
+</html>

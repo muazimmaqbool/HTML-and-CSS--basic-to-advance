@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations using Keyframes</title>
+    <style>
+        /*
+        ->Animations using keyframes:
+          css allows the animation of HTML elements without using javascript. You can change as many CSS properties as
+          you want, as often as you wish.
+          To use CSS animation, you must first specify some keyframes for the animation.
+          Keyframes hold what styles the element will have at certain times
+
+          -> values : animation-name,  animation-duration, animation-delay, animation-iteration-count, animation-direction, animation-timing-function, animation-fill-mode
+
+
+        */
+        body{
+            margin: 0;
+            background-color: teal;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container{
+            width: 300px;
+            height: 300px;
+            border: 2px solid white;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: white;
+
+            /*adding keyframes animation*/
+            animation-name: circles;
+
+            /* animation-name: slide-in; */ /*used to explain animation-fill-mode*/
+            
+            animation-duration: 3s;
+
+            /* animation-delay: 2s; */ /* animation will run after 2 seconds*/
+
+            /* animation-iteration-count: 4; */ /*animation will run 4 times*/
+            /* animation-iteration-count: infinite; */
+            /*runs continuously */
+
+            /*-> animation directio : tells where your animation goes*/
+
+            /* animation-direction: normal; */
+            /*animation is played as normal(forward). this is default (0% to 100%) */
+
+            /* animation-direction: reverse; */
+            /* animation is played in reverse direction i.e backward (starts from 100% to 0%) */
+
+            /* animation-direction:alternate ; */
+            /*animation is played forward first and then backward (to see this make animation infinite)*/
+            /* animation-direction: alternate-reverse; */
+            /*animation is played backward first and then forward (to see this make animation infinite)*/
+
+            /*animation-timing-funciton:*/
+            /*and same as see in transition code */
+            /*like ease,linear,ease-in,ease-out,ease-in-out,cubic-bezier: works in same way slow then first etc*/
+            animation-timing-function: linear;
+
+            /*-> animation-fill-mode*/
+            /*it defines that after the animation where should element go*/
+            /*it specifies a style for the target element when the animation is not playing(before it starts, after it ends, or both*/
+            /* values none, fowards, backwards, both*/
+
+            /*before seeing this change animation-name to slide-in above*/
+            
+            /* animation-fill-mode: forwards; */
+            /*the element will stop at 100% keyframe (or stops at last keyframe)*/
+
+            /* animation-fill-mode: backwards; */
+            /*the element will stop at 0% keyframe (or come back to first keyframe*/
+
+            /* animation-fill-mode: both; */
+            /*the element will follow the rules for both forward and backward*/
+
+            /* animation-fill-mode: none; */
+            /*default value, animation will not apply any styles to the element before or after it is executing*/
+
+        }
+
+        /*defining keyframes*/
+        /*and inside keyframes we define what to do at certin times {like what to do at 0% of the time, 25%,10%,75%,... of the time kya karna hain ,etc...}*/
+        @keyframes circles {
+            /* here we could write like this 0%, 100%{...} means apply this animation at 0 and 100%*/
+            
+            /* or 0% {*/
+            0%, 100%{ 
+                transform: translate(0, 0); /*at its origin position*/
+            }
+            25%{
+                transform: translate(200px, 0); /* at top right corner*/
+            }
+            50%{
+                transform: translate(200px, 200px); /*at bottom right croner*/
+            }
+            75%{
+                transform: translate(0, 200px); /*at bottom left corner and -> then it moves to its origin at top left*/
+            }
+        }
+
+        /*used to explain animation-fill-mode*/
+        @keyframes slide-in {
+            0%{
+                transform: translate(-400px);
+            }
+            100%{
+                transform: translate(200px);
+            }
+        }
+
+        /* we can also use from and to in keyframes (shurwad kahan se karna hain khatam kahan karna hain )*/
+        /* form and to is similar writing 0% and 100% */
+        /* from and to is usually used when you want to mention only two places */
+        
+        /*animation is shorthand for writing all properties :
+            -> animation: name duration timing-function delay iteration-count direction fill-mode;
+        */
+        
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+</body>
+</html>

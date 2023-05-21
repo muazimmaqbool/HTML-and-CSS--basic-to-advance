@@ -1,0 +1,50 @@
+<html lang="en">
+    <head><title>Floating</title>
+        <style type="text/CSS"> 
+            #first-section{
+                font-size: 150%;
+                color:blue;
+                background-color: pink;
+                width:200px;
+                /* Moving this section to the right of second section */
+                float:right;
+                /*again moving to its orginal position i.e float:left;*/
+                float:left; /*Now there will be no margin between the two sections/blocks*/
+            }
+            #second-section{
+                background-color: black;
+                color: aliceblue;
+                font-family:monospace;
+                width:200px;
+                float:right;
+
+            }
+            .important{
+                text-decoration: underline;
+            }
+            .clear-float{
+                clear: both; 
+                /* both means clearning both left and right floats */
+            }
+        </style>
+    </head>
+    <body>
+        <div id="first-section">
+            <p>This is Line 1 in first-section</p>
+            <p>This is line 2 in first-section</p>
+        </div>
+        <div id="second-section">
+            <h1> this is line h1 in second-section</p>
+            <h2>this is line h2 in second-section</p>
+            <p style="color:blue;">There is something <span class="important" style="color:white;">Important</span></p>
+        </div>
+        <P>This paragraph is not floated</P> <!-- will be placed in the middle so, anything that's not
+        floatted will be placing itself in the flow of the page-->
+        <div class="clear-float">
+            <p>This line is not floated but placed below the two sections</p>
+        </div>
+        <!-- or use this <p style="clear:both">this is another test line</p> -->
+        
+        <!-- Floating has the advantage of to be very flexible however wide the screen is , it can float to the endge of the screen-->
+    </body>
+</html>

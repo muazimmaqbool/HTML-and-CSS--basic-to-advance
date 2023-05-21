@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><title>Display Property</title></head>
+    <!-- important topic.
+    visit: https://www.w3schools.com/cssref/pr_class_display.php#:~:text=The%20display%20property%20specifies%20the,is%20inline%2C%20including%20SVG%20elements. 
+          and https://www.youtube.com/watch?v=Bf1Vq3pGNao&t=173s -->
+    <style>
+        /*
+        Block elements: they block the flow of content , block elements takes whole available width,
+             A Block-level element occupies the entire horizontal space 
+             
+        Inline elements: Inline elements are those which only occupy the space bounded by the tags 
+          defining the element, instead of breaking the flow of the content. Note: An inline 
+          element does not start on a new line and only takes up as much width as necessary
+                
+        Note: in inline elements you cannot define margin top and bottom but we can add them in inline-block elements */
+        *{
+            border:1px solid blue;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 25px;
+        }
+        p{
+            color: green;
+            /*by defaut <p> is block but we can change it to inline so all p's come in same line*/
+            /* display: inline;  */
+            /*Now we cannot change its width because it's inline element now */
+            /*Note: if you want too change its width now then make it inline-block */
+            display: inline-block;
+            width: 200px;
+        }
+         /* the draw back of inline element is that you cannot give them width and height because they
+        take width and height according to the content inside them */
+        a{
+            /* width: 500px;  *//*this will not work because its an inline element*/
+
+            /*Note: to change its width make it inline-block or block as <a> is inline by default */
+            /* display: block; */
+             /*using block width will change but will come in different line */
+            display: inline-block; 
+            width: 300px;
+            /* Note: In inline elements you cannot define margin top and bottom but we can add in inline-block elements */
+        }
+        /*Note: In images we can set width and height , although they are also inline.
+           The image<img> element is actually inline-block  element thats why we are able too change
+           its width and height*/
+        img{
+            width: 150px;
+        }
+
+    </style>
+    <body>
+        <!--Display Property: The display property specifies the display behavior of an element. 
+          display values: block, inline, inline-block, none 
+        -> none: it disappears from html document -->
+
+        <p>Text inside p tag line1</p>
+
+        <p>Text inside p tag line2</p><!-- this will start at new line because paragraph elements are block elements-->
+        <!-- css has many block elements like p, headings etc 
+        Block elements: they block the flow of content , block elements takes whole available width,
+             A Block-level element occupies the entire horizontal space-->
+
+        <!-- some elements are inline by default(means: ek ke baed dousra aaya ga )-
+            Inline elements autni he jagah lete hain jitna content hoo -->
+        <span>Lorem ipsum dolor sit.</span>
+        <span>Lorem, ipsum dolor.</span>
+        <span>Lorem ipsum dolor sit amet.</span>
+        <!-- they all will come in same line-->
+
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpngGRjYX1ca7qAADU3K6eGLj7ShQE3L2otdzfryl_Y9Ht2QRoQKYQbsXd36XIxMbYOw0&usqp=CAU">
+        <a href="#">Click Me!</a>
+        <a href="#">Click Me!</a><!-- will come in same line after previous a-->
+        <!-- the draw back of inline element is that you cannot give them width and height because they
+        take width and height according to the content inside them-->
+    </body>
+</html>
+<!-- block elements : 
+    -> <p>, headings <h1>...<h6>, <div>, <form>, lists(<ol>, <ul>, <li> )
+        (block elements ek ke nechay aate hain )
+-->
+<!-- inline elements:
+    -> <img>, <span>, anchor <a>, <br>, <button>
+        <img> is inline-block  
+-->

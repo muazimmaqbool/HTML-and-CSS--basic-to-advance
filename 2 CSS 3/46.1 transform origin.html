@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform Origin</title>
+    <style>
+        /*
+        -> transform-origin property allows yout to change the position of transformed lelements
+           - 2D transformation can change the x and y-axis  and 3D can also change z-asix of the element also
+           supported values of transformation origin: left,corner,right,length,%
+
+        means: hum isko bata skhta ho ki app jo tranform karr rahe hoo usko origin khana parr hain
+           */
+        .container{
+            background-color: blue;
+            width: 300px;
+            height: 300px;
+            margin: 50px auto;
+        }
+        .box{
+            background-color: tomato;
+            width: 150px;
+            height: 150px;
+            font-size: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* transform: rotate(45deg); */
+            /* transform-origin: top left; */
+            /* transform-origin: top; */ 
+            /* transform-origin: top right; */
+            /* transform-origin: center; */
+            
+            /* transform-origin:50% 50%; */
+            /*first 50% is relative to the width in x-direction and second 50% is reality to the height*/
+
+            /* transform-origin: 10% 0; */
+            transform-origin: 50px 20px; /* 50px is x-direction and 20px in y direction*/
+            transition: 0.5s ease;
+        }
+        .box:hover{
+            transform: rotate(45deg);
+            /*now it will rotate 45deg on hover and it rotate from 50px horizontal and 20px vertically*/
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">BOX</div>
+     </div>
+</body>
+</html>

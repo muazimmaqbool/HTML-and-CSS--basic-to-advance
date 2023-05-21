@@ -1,0 +1,40 @@
+<html lang="en">
+    <head><title>Styling text</title>
+        <style type="text/css">
+        p{
+            font-size: 150%;
+        }
+        .bold{
+            font-weight: bold;
+        }
+        .italic{
+            font-style: italic;
+        }
+        .underline{
+            text-decoration:underline;
+        }
+        a{ /*a referes to link tag */
+            text-decoration: none; /*This will make link not underlined*/
+        }
+        .big{
+            font-size: 250%;
+        }
+        .clor{
+            background-color: black;
+            color: beige;
+        }
+        </style>
+    </head>
+    <body>
+        <p class="bold">This is some Bold text</p>
+        <p class="italic">This is some Italic text,<span class="bold"> And this is Bold and Italic</span></p>
+        <!-- In span i only mentioned class bold because this line is by default italic and i have to only add bold to make it 
+        both bold and italic , other wise i have to mention like this class="bold italic"-->
+        <p class="underline">This is some underline text</p>
+        <a href="">This is a LINK</a> <!-- by default links are underlined so i will make it not underlined using a class in css-->
+        <!-- hover links in next code -->
+        <p class="big clor">This text is big text</p>
+
+        <!-- google css styling text>CSS text in w3schools for more styling text -->
+    </body>
+</html>

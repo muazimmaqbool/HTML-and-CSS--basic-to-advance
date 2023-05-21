@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><title>Other HTML5 Features</title>
+        <style> /* writting type is optional in html5*/
+            article{
+                color: green;
+                font-size: 40px;
+            }
+            header,footer,section,nav,menu{
+                display: block;
+                /*watch video at 1:50*/
+            }
+            wishList{
+                background-color: blueviolet;
+                width: fit-content;
+            }
+        </style>
+        <!-- we can even create our own elements using javascript -->
+        
+    </head>
+    <body>
+     <!-- watch video for proper understanding    -->
+     <!-- html-5 focuses more on making html more readable to humans for that many div's names and many elements names
+     have been change like <b></b> to <strong></strong>, and many div's are added like
+     section, nav, header, footer, menu -->
+
+     <article>
+        i'm an article
+     </article>
+
+     <wishList> <!-- elemet created in JS-->
+        welcome, to wishList
+     </wishList>
+
+     <!-- there is also new image element as well : figure - its helps users to add
+    captions and connets those with images-->
+    <figure>
+
+        <img width="200"  src="M.png" alt="M logo image" >
+
+        <!-- adding caption to image using figcaption inside figure-->
+        <figcaption>
+            <!-- <p>This is Caption</small></p> -->
+
+            <!-- <p>This is Caption<small> (of M-logo)</small></p> -->
+            <!-- small is used to display small text-->
+
+            <p><mark>This is Caption</mark><small> (of M-logo)</small></p>
+            <!-- mark is used to highlight the text-->
+        </figcaption>
+
+    </figure>
+    
+    <!-- we can add data-description with each element , gives info about particular element-->
+    <input dataDescription="input-text" type="text" id="text1">
+    <!-- or write data-description-->
+
+
+    <!-- we have new type of input: range , this is basically a slider-->
+    <!-- watch at 6:30-->
+
+    <input type="range">
+
+    <!-- we can specify min and max values as well-->
+    <input type="range" min="0" max="7">
+
+    <!-- we can also specify the steps as well like in 1's 5's 10's etc-->
+    <input type="range" min="0" max="100" step="10">
+
+    <!-- important feature of html5: 
+    contenteditable: which makes any content on your website editable by the user
+   (user can edit the text on the webpage directly) 
+       this feature can be used to create the dairy/notebook/coding application etc-->
+    <div contenteditable="true">
+        this is some text which can be edited on the webpage as contenteditable is true
+    </div>
+    <!-- contenteditable can be used on element type-->
+    <ul contenteditable="true">
+        <li>buy milk</li>
+        <li>buy fruits</li> <!-- here we can also add our list as well in webpage directly-->
+        <li contenteditable="false">buy apple</li>
+    </ul>
+
+    <script>
+        document.createElement("wishList");
+        //now we can use wishList as element in our document
+
+        //getting data-description of input-text element
+        document.write("<br><br> Data-description of input: ",document.getElementById("text1").getAttribute("dataDescription"));
+</script>
+    </body>
+</html>

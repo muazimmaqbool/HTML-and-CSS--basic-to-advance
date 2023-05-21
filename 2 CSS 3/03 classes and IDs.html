@@ -1,0 +1,43 @@
+<!-- When you want certain paragraph to look different than other paragraphs
+that's where we use classes and ids-->
+<html lang="en">
+    <head><title>Classes and IDs</title>
+        <!-- Note: A class name cannot start with a number! -->
+        <style type="text/CSS"> 
+            .red{ /* full stop/period/dot is known as class slector , selects everything with a class of red */
+                color: red;
+            }
+            .large{
+                font-size:200%;
+            }
+            #green{ /* # is used for IDs , known as id selector */
+                color: green;
+            }
+            .underline{
+                text-decoration: underline;
+            }
+            
+            
+        </style>
+    </head>
+    <body>
+        <p class="red">This is Line looks different(class red)</p>
+        <p class="large">This line is using large class</p>
+        <!-- can apply multiple classes to a single element-->
+        <p class="red large">This line is using both classes red and large</p>
+        <h1 class="red">H1 is using red class</h1>
+        <p id="green">this line using id green</p><!-- ids work the same way classes do-->
+        <p id="green" class="large">this line using id green and class large</p>
+        
+        <p style="font-size:150%;">There is a line <span class="underline">Which is Important</span></p> <!-- no space is available in class name-->
+        <!-- span is used to select any junk of information -->
+        
+        <!-- IDs are used once per page 
+        ID is only used to identify one single element in our HTML. 
+        IDs are only used when one element of the page should have a 
+        particular style applied to it. However, a class can be used 
+        to identify more than one HTML element.
+    Note: An id name cannot start with a number! 
+-->
+    </body>
+</html>

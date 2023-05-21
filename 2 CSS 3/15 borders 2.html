@@ -1,0 +1,47 @@
+<html lang="en">
+    <head>
+         <title>Borders</title></title>
+         <style type="text/css">
+            #red{
+                background-color: red;
+                border: 10px black solid;
+            }
+            #blue{
+                background-color:blue;
+                /*Setting different borders styles and colors around the box*/
+                border-style: ridge dashed solid groove;
+                border-color: black red yellow chocolate;
+                /* border-width: 10px; all sides */
+                /* border-width: 10px 30px; top and bottom=10px and right and left=30px */
+                border-width: 10px 20px 30px 40px; /*top right bottom left*/
+                
+            }
+            #green{
+                background-color:green;
+                border: 10px wheat dotted;
+                /*border-radius: 20px;*/ /*adds radius to the edge of the square*/
+                border-radius: 50%; /*makes square circle , but make sure width and height is same*/
+                outline: 5px dashed blueviolet; /* optional line*/
+            }
+            #teal{
+                background-color: teal;
+                border: 10px white solid;
+                outline: 5px black dashed;
+            }
+            .square{
+                width: 100px;
+                height:100px;
+                margin: 30px;
+            }
+            body{
+                background:rgb(167, 187, 131);
+            }
+         </style>
+    </head>
+    <body>
+        <div id="red" class="square"></div>
+        <div id="blue" class="square"></div>
+        <div id="green" class="square"></div>
+        <div id="teal" class="square"></div>
+    </body>
+</html>

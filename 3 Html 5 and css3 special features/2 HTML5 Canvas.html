@@ -1,0 +1,101 @@
+<html lang="en">
+    <head><title>HTML5 Canvas</title>
+    </head>
+    <!-- The HTML <canvas> element is used to draw graphics on a web page.
+        What is HTML Canvas?
+            The HTML <canvas> element is used to draw graphics, on the fly, via JavaScript.
+                
+            The <canvas> element is only a container for graphics.
+                You must use JavaScript to actually draw the graphics.
+
+            Canvas has several methods for drawing paths, boxes, circles, text, and adding images.
+
+            Canvas at its base level allows us to draw on the screen , but at its advance level it allows us to
+            create 2D and 3D games.
+    -->
+    <style type="text/css">
+        #myCanvas{
+            border: 2px solid saddlebrown;
+        }
+    </style>
+    <body>
+        <canvas id="myCanvas" width="500" height="400">
+
+        </canvas>
+
+        <!-- to do anything with our canvas we need to use script -->
+        <script>
+            var var_canvas=document.getElementById("myCanvas");
+            //first specify whether we are working in 2d or 3d
+            var context_type=var_canvas.getContext("2d");
+            context_type.fillStyle="#49C900";
+
+            //to draw a rectangle we use fillrect
+            //context_type.fillRect(0,0, 100,50);
+            context_type.fillRect(50,10,50,100);
+            
+            // first two two numbers are starting point of the shape and next two number are width and height(,100,50)
+         // o,o, are at top left and
+
+        //drawing a line
+        // context_type.moveTo(0,400); //starting position of the line
+        // context_type.lineTo(500,00); //ending positionof the  line
+        // context_type.strokeStyle="#ff0000"; //color of line(optional)
+        // context_type.stroke(); //draw a line
+
+        context_type.moveTo(10,300); //starting position of the line
+        context_type.lineTo(80,120); //ending positionof the  line
+        context_type.lineWidth=15; //width of the line
+        context_type.stroke(); //draw a line
+
+        //gradient :CSS gradients let you display smooth transitions between two or more specified colors. CSS defines three types of gradients: Linear Gradients (goes down/up/left/right/diagonally) Radial Gradients (defined by their center) Conic Gradients (rotated around a center point)
+        // lets add gradient to the rectangle in which we draw two lines
+            
+        var gradient=context_type.createLinearGradient(150,100 , 350, 300); // starting and ending coordinates
+        gradient.addColorStop(0,"white"); // 0: starting place i.e 150,100
+        gradient.addColorStop(1,"blue"); // 1: ending place i.e 350,300
+        
+
+        // context_type.fillStyle="#0055ff";
+        context_type.fillStyle=gradient;
+        context_type.fillRect(150,100,200,200);
+        context_type.moveTo(150,100);
+        context_type.lineTo(350,300);
+        context_type.lineWidth=5;
+        context_type.strokeStyle="#d0ff00";
+        context_type.stroke();
+        context_type.moveTo(150,300);
+        context_type.lineTo(350,100);
+        context_type.lineWidth=5;
+        context_type.strokeStyle="#d0ff00";
+        context_type.stroke();
+        
+        //lets draw a circle
+        context_type.beginPath();
+
+        context_type.arc(350,50,40,0,2 * Math.PI); // at 11:45 is important
+        // first two are coordinates of the center of the cirle
+        // then we give radius of the circle
+        //0 means starting from 0 point the circle . which is usually right of the center
+            //here we use arc angle , 2*Math.PI to draw an arc it helps in draw small points
+        // this will also work: context_type.arc(350,50,40,0,2*Math.PI);
+        // but its better to you Math.PI
+        //Math.PI draw semi circle / arc that's half the circle
+        // try 2*Math.PI*3/4 , Math.PI*3/4 , Math.PI*Math.PI*3/4
+        
+        context_type.strokeStyle="#0055ff"; //changing color of the circle
+        context_type.stroke();
+
+        //adding text to canvas
+        var textGradient=context_type.createLinearGradient(10,350 , 350, 300); // starting and ending coordinates
+        textGradient.addColorStop(0,"red"); // 0: starting place i.e 150,100
+        textGradient.addColorStop(1,"yellow"); // 1: ending place i.e 350,300
+        context_type.fillStyle=textGradient;
+        // context_type.fillStyle="Green";
+        context_type.font="40px black";
+        context_type.fillText("Text inside Canvas", 100,350 )
+
+        </script>
+
+    </body>
+</html>

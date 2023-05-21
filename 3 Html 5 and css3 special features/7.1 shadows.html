@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><title>Shadows</title>
+        <!-- A shadow is a dark area where light from a light source is blocked by an opaque object. It occupies all of the three-dimensional volume behind an object ... -->
+    <!-- there are two ways to apply shadowing in css3 i.e text and box shadowing -->
+    <!-- learn for more details from w3schools -->
+    <style>
+        /*text shadow*/
+        h3{
+            text-shadow:2px 2px ;
+            /*i.e shadow will be 2px right and 2px down of the orginal*/
+        }
+        h1{
+            /* text-shadow:2px 2px ; */
+            /*i.e shadow will be 2px right and 2px down of the orginal*/
+
+            /*adding color to shadow*/
+            /* text-shadow: 2px 2px green; */
+
+            /*adding blur to the shadow (with blur text looks good)*/
+            /* text-shadow: 2px 2px 4px green;  */
+            /*4px is 4px blur*/
+
+            /* making text invisible by setting its color to white and just showing the shadow*/
+            text-shadow: 2px 2px 4px green;
+            color: white; /* set this color same as background color */
+        }
+        p.blur{
+            color: black;
+            text-shadow:2px 2px 4px brown;
+        }
+        /* add glow effect to the text by setting 0 0 offset on text-shadow */
+        h2{
+            text-shadow: 0 0 4px blue;
+        }
+
+        /*adding multiple shadows*/
+        h1:last-of-type{ /*will apply to last h1*/
+            text-shadow: 0 0 5px red, -5px -5px 4px yellow;
+            /*-5px -5px means going left and up*/
+        }
+
+        /*box shadowing*/
+        #shadow-box{
+            width:200px;
+            height: 200px;
+            background-color: aqua;
+
+            /* box-shadow: 3px 3px black; */
+
+            /* box-shadow: 3px 3px 3px black; */
+            /*3px of blur*/
+
+            /* box-shadow: 3px 3px 3px blue; */
+
+            box-shadow: 12px 12px 3px gray;
+            
+        }
+        #box-2-shadow{ /* box with two shadows */
+            width: 100px;
+            height: 100px;
+            margin-top: 10px;
+            background-color: cadetblue;
+            box-shadow: 10px 10px 5px yellow,-10px -10px 5px green;
+        }
+
+    </style>
+    </head>
+    <body>
+        <h3>This text has basic shadow</h3>
+        <h1>This text will have a shadow</h1>
+        <h2>This text will glow</h2>
+        <h1>This text will have multiple shadows</h>
+        <!-- box shadowing happens on divs or any box shaped element-->
+        <div id="shadow-box">
+        </div>
+        <div id="box-2-shadow"></div>
+        <p class="blur">This text has blur shadow</p>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!-- Internal CSS is a form of CSS by which you can add CSS to HTML documents. 
+    It helps to design the layout of a single HTML web page and change the styles of a web page within
+     HTML code. 
+     Can add both inline and internal css and the same time as well
+-->
+<html lang="en">
+    <head><title>Internal CSS</title>
+        <!-- can place style anywhere in the html, but usually used in head section-->
+        <style type="text/CSS"> /* this tells the browser that the style command that will be applied to the rest of the document*/
+            p{ /* this will be applied to all p tags*/
+                color:brown;
+                font-size: 200%;
+                font-style: italic;
+                font-family: monospace;
+            }
+            h1{ 
+                font-family: cursive;
+                color: chartreuse;
+            }
+        </style>
+    </head>
+    <body>
+        <p>This is Line number one</p>
+        <p>This is Line number two</p>
+        <p>This line is written after writting p in styles</p>
+        <h1>CSS is cool</h1>
+        <p style="color:green;">Color changed using inline css and font using internal css</p>
+    </body>
+</html>

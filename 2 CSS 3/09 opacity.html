@@ -1,0 +1,45 @@
+<html lang="en">
+    <head><title>
+        opacity</title>
+        <style type="text/css">
+            /*Now lets set opacity of element  to see through 
+            opacity of 1 means completely solid and 0 means completely dissapeare
+            and o.5 means half solid and half visible*/
+            #first{
+                font-size: 150%;
+                background-color: rgb(45, 0, 247);
+                color:rgb(255, 255, 255);
+                width:200px; 
+                position:relative; 
+                top:100px;
+                left:100px;
+                z-index:1;
+               }
+            #second{
+                font-size: 150%;
+                background-color: aqua;
+                color: chocolate;
+                width:200px;
+                position:relative;
+                z-Index:2;
+                opacity: 0.5; /*First section will be visible through second section*/
+                /*Can use values from 0 to 1 any number like 0.9,0.5 etc */     
+            }
+            
+        </style>
+    </head>
+    <body>
+        <strong>
+
+        <div id="first">
+            <p>This is line 1 in first</p>
+            <p>This is line 2 in first</p>
+        </div>
+
+        <div id="second">
+            <p>This is line 1 in second</p>
+            <p>This is line 2 in second</p>
+        </div>
+    </strong>
+    </body>
+</html>

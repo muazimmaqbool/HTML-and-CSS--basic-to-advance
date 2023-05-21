@@ -1,0 +1,30 @@
+<html lang="en">
+    <head><title>Aligning Text</title>
+        <style type="text/css">
+            p{
+                text-align: right; /*It will align it to the right of the parent element*/
+                font-size: 150%;
+            }
+            div{
+                width:300px;
+                height: 100px;
+                background-color: pink;
+            }
+            .centered{
+                text-align: center;
+            }
+            .justified{
+                text-align: justify;
+                /*It stretches the text right to the edge of the page*/
+            }
+        </style>
+    </head>
+    <body>
+        <p>This is some text</p><!--Its parent element is body tag -->
+        <div>
+            <p>This text is inside div</p><!--Its parent element is div, It aligns to the right of div that's at its end-->
+        </div>
+        <p class="centered">This text is in Center</p>
+        <p class="justified">This text is justified This text is justified This text is justified This text is justifiedThis text is justified This text is justified This text is justified</p>
+    </body>
+</html>

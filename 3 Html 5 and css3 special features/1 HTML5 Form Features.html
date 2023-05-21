@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><title>form features</title>
+    </head>
+    <body>
+        <form id="myform">
+            Placeholder: <input type="text" placeholder="your name here">
+            <!-- text inside placeholder will be shown by browser and when you start typing it disappears -->
+            <!-- placeholder is also new feature, now lets look at some other new other features-->
+            
+            <p>Autofocus: <input type="text"  autofocus></p> 
+            <!-- allows user to start form filling from paticular input . so it make user directly edit 
+                this input in which autofocus is mentioned -->
+            <!-- see autofocus from w3schools -->
+
+            <p>AutocompleteOFF: <input type="text" autocomplete="off"></p> 
+            <!-- tells browser not to auto complete any text-->
+
+            <p>Required: <input type="text" required></p> <!-- Makes this field to must be filled in-->
+            <P>Email: <input type="email"></P><!-- it will not work if you don't put email inside this input field-->
+
+            <!-- pattern : to insist that input has certain pattern to it (visit html5pattern.com for more details)-->
+            <p>Pattern: <input type="text" pattern="[0-9]" placeholder="0-9"></p>
+            <!-- means input must be only b/w 0-9 -->
+            
+            <!-- autocomplete with predefined list/items , we can type new text as well-->
+            <datalist id="items">
+                <!-- if your broswer doesn't support datalist then we can use
+                select element inside the datalist-->
+                <!-- <select>
+                    <option value="camera">camera</option>
+                    <option value="usb">usb</option>
+                    <option value="cpu">cpu</option>
+                    <option value="mouse">mouse</option>
+                    <option value="laptop">laptop</option>
+                </select> -->
+                <option value="camera">camera</option>
+                <option value="usb">usb</option>
+                <option value="cpu">cpu</option>
+                <option value="mouse">mouse</option>
+                <option value="laptop">laptop</option>
+            </datalist>
+            <p>Autocomplete: <input type="text" list="items"> </p>
+
+            <p><input type="submit" value="Submit" ></p>
+            <!-- Linking an input to specific form , even though the input is mentioned outside of the form
+            we can link this input with the form using its form id and when that form is submitted the input also gets submitted with it.-->
+           
+            <!-- previously you can also mention only one form action option but now you can specify different actions on different submit buttons-->
+            
+            <p><input type="submit" value="Submit to different action" formaction="differenturl" ></p>
+        
+            <!-- now we can have differnt methods on each button-->
+
+            <!--uploading multiple files with html 5-->
+            <p>file upload <input type="file"></p> <!-- for selecting one file-->
+            <P>Multiple file upload <input type="file" multiple></P>
+        </form>
+        <!-- input declared outside the form and will still be linked to above form using its id and when above form
+        gets sumitted this input field also gets submitted-->
+        <p>Input outside the form: <input form="myform" type="text" required></p>
+    </body>
+
+</html>

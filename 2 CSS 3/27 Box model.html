@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><title>Box Model</title></head>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /*by default every box is content box*/
+        }
+        .div1{
+            border: 10px solid red;
+            padding: 20px;
+            margin: 20px 10px;
+            width: 200px;
+            height: 150px;
+            /*this height and width will be of only content but if you want proper box of 200x150 use
+            box-sizing:boxer-box*/
+        }
+    </style>
+    <body>
+        <!-- visit:  https://www.w3schools.com/css/css_boxmodel.asp and
+                     https://www.youtube.com/watch?v=QyrYEyMNYBk&t=17s
+
+        -> All HTML elements can be considered as boxes.
+        -> In CSS, the term "box model" is used when talking about design and layout.
+        -> The CSS box model is essentially a box that wraps around every HTML element. It consists of:
+             margins, borders, padding, and the actual content.
+                :   Content - The content of the box, where text and images appear
+                    Padding - Clears an area around the content. The padding is transparent
+                                (padding: seperates content from border )
+                    Border - A border that goes around the padding and content
+                    Margin - Clears an area outside the border. The margin is transparent
+                                (margin: seperates element from another element )
+        -->
+        <!-- Note:  by default body has 8px of margin -->
+        <!-- Demonstration of the box model: -->
+        <!-- box sizing: The box-sizing property allows us to include the padding and border in an
+                         element's total width and height. If you set box-sizing: border-box;
+                         on an element,   -->
+        <div class="div1">
+            Box1 in Div1
+        </div>
+        <div class="div1">
+            Box2 with class Div1
+        </div>
+    </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><title>Gradients </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum=scale=1.0, user-scalable=no, minimal=ui">
+        <!-- CSS gradients let you display smooth transitions between two or more specified colors.
+        CSS defines three types of gradients:
+        Linear Gradients (goes down/up/left/right/diagonally)
+        Radial Gradients (defined by their center)
+        Conic Gradients (rotated around a center point)
+        also visit w3schools for more -->
+    <style>
+        #gradient{
+            width: 400px;
+            height: 200px;
+            background-color: blue; /* this is also optional used when browser doesn't support gradient*/
+            
+            /*Linear Gradients (goes down/up/left/right/diagonally)*/
+
+            /* making gradient that goes from top-bottom with white to blue*/
+            /* background: linear-gradient(white,blue); */
+
+            /* left to right*/
+            /* background: linear-gradient(to right,white,blue);  */
+
+            /* diagonal gradient : left to bottom right */ 
+            /* background: linear-gradient(to bottom right,white,blue); */
+               background: linear-gradient(to top right,yellow,green);
+            /*many other :*/
+            /* background: linear-gradient(to left,white,blue); */
+            /* background: linear-gradient(to top left,white,blue); */
+
+            /*we can also use many colors*/
+            /* background: linear-gradient(to left top, blue,red,yellow,white); */
+            /* background: linear-gradient(to left,red,yellow,green); */
+        }
+
+        /* Radial Gradients (defined by their center) */
+        #radial-gradient{
+            width: 400px;
+            height: 200px;
+            background-color: aqua; /*optional*/
+
+            /*color starts from middle/center */
+            /* background: radial-gradient(white,green); */
+
+            /* background: radial-gradient(white,green,rgb(157, 255, 0),black); */
+
+            background: radial-gradient(yellow 10%, green 5%,pink 20% , gray 50% );
+        }
+
+        /* A conic gradient is a gradient with color transitions rotated around a center point.
+        To create a conic gradient you must define at least two colors. */
+        #conic-gradient{
+            width: 300px;
+            height: 300px;
+            /* background: conic-gradient(red,yellow,blue); */
+
+            /* background: conic-gradient(black,yellow,white,green,blue,red); */
+
+            /* Conic Gradient: Three Colors and Degrees */
+            /* background: conic-gradient(red 85deg,yellow 90deg, green 200deg); */
+            
+            /*try also conic-gradient with border radius 50% but height and width should be of same size*/
+            border-radius: 50%;
+            background: conic-gradient(green 70deg, yellow 30deg, red, blue, white, pink, rgb(199, 29, 185));
+
+        }
+        /* learn more on gradients on w3schools .
+        shadows will be learned on next program*/
+    </style>
+    </head>
+    <body>
+        <div id="gradient">
+            <h3>This is linear gradient</h3> <!-- this is optional putting content here -->
+            <!-- Linear Gradients (goes down/up/left/right/diagonally) -->
+        </div>
+
+        <div id="radial-gradient">
+            <h3>this is radial gradient</h3> 
+            <!-- Radial Gradients (defined by their center) -->
+        </div>
+
+        <div id="conic-gradient">
+            <h3>this is conic gradient</h3>
+            <!-- Conic Gradients (rotated around a center point) -->
+        </div>
+    </body>
+</html>

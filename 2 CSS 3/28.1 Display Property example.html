@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><title>Display Property Example</title></head>
+    <!--  visit:  https://www.youtube.com/watch?v=Bf1Vq3pGNao&t=173s 
+    See previous program 28 , this code contains nav bar example | Using differnt display properties here
+    -->
+    <style>
+        *{
+            /* border: 2px solid orangered; */
+            margin: 5px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-size: 25px;
+        }
+        body{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        ul{ 
+            list-style: none;
+            text-align: end; /*shifts items to right side*/
+            padding: 20px;
+            background-color:grey;
+            color: white;
+            font-weight: bold;
+        }
+        li{
+            display: inline;
+            padding: 10px;
+            transition: 1s ease;
+            /* width: 200px; */ /*it will only work if you make it display:inline-block */
+        }
+        li:hover{
+            color: green;
+        }
+    </style>
+    <body>
+        <!-- using display properties in nav bar -->
+        <nav>
+             <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+             </ul>
+             <!-- it won't show any bullet points on screen because we have used padding 0 for all elements in css
+            to make them visible if you want you can remove padding:0 in css -->
+        </nav>
+    </body>
+    
+</html>

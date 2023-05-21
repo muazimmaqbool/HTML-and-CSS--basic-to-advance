@@ -1,0 +1,52 @@
+<html lang="en">
+    <head><title>
+        Fixed Positioning</title>
+        <style type="text/css">
+           /*Fixed positioning : An element with position: fixed; is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled. 
+           
+           Fixed is like absolute : its also out of the flow of page and we can move it around just like absolute
+           The difference is that absolute will move when page is scrolled but fixed will not*/
+            #first{
+                font-size: 150%;
+                background-color: rgb(45, 0, 247);
+                color:rgb(255, 255, 255);
+                width:200px;
+                position: fixed;
+                /*There are some many positioning like sticky and static
+               try this : position:sticky;
+                          top:20px;
+                        and this : position: static; 
+                        static will put elements back in the flow of page
+                        static is used less and this is the default position the 
+                        element will have if you don't declare the position of
+                        the element in CSS
+                        Also used when you work with someone else's code you need to forcefully remove the position of
+                        the element which is outside of your control*/
+              
+               }
+            #second{
+                font-size: 150%;
+                background-color: aqua;
+                color: chocolate;
+                width:300px;
+                height: 5000px; /*Not fixed it will stretch with the page*/
+                    
+            }
+            
+        </style>
+    </head>
+    <body>
+        <strong>
+
+        <div id="first">
+            <p>This is line 1 in first</p>
+            <p>This is line 2 in first</p>
+        </div>
+
+        <div id="second">
+            <p>This is line 1 in second</p>
+            <p>This is line 2 in second</p>
+        </div>
+    </strong>
+    </body>
+</html>

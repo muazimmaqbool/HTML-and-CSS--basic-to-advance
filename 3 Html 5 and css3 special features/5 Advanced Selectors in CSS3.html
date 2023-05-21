@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><title>Advanced Selectors</title>
+    <!--CSS3 incorporates the CSS2 standard with some changes and improvements. A key change is the division of standard into separate modules, which makes it easier to learn and understand-->
+    <style>
+        /* selecting elements in advanced ways in css3*/
+        /*watch video */
+        div p{ /* selects al p's within div, its known as descendent selector*/
+            color:green;
+            font-size: 120%;
+        }
+
+        /*if you want to select p's in the same div that have the H3 in it*/
+        h3 ~ p{ /*underlines all p's within the div with an h3 element in it . its known as sibiling selector*/
+            text-decoration: underline;
+            background-color: grey;
+            width: fit-content;
+        }
+        h3 + p{/* selects p following h3 element*/
+            font-size: 150%;
+            color: white;
+        }
+        
+        /* selecting elements with certain attribute in it 
+        eg. select lins with target attribute in their use this : a[target]{ }  . watch at 5:00
+        also selecting links that go to google.com use this: a[href="http://www.google.com"]{ } ,
+        a[href*="google"] { } select a which has google in them
+        and these can work with any element that was a particular attribute to select not only with links 
+        
+
+        ^= selects that begins with
+        $= that ends with
+        ~= checks whether it has the value between two spaces
+        |= if it has the value seperated by (-)
+
+        */
+
+    </style>
+    </head>
+    <body>
+        <h1>I'm Heading</h1>
+        <div>
+            <h3>I'm H3 in first div</h3>
+            <p>I'm Paragraph</p>
+            <p>I'm paragraph in First div</p>
+            <a href="#">I'm Link</a>
+        </div>
+        <p>I'm paragraph  outside the div</p>
+        <div>
+            <p>I'm paragraph  in another div</p>
+        </div>
+    </body>
+</html>

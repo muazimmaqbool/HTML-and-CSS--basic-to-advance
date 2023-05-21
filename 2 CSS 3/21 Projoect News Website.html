@@ -1,0 +1,390 @@
+<html lang="en">
+    <head><title>BBC News Website</title>
+    <style type="text/css">
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: helvetica , Arial , sans-serif;
+        }
+        #top-bar{
+            /*Centering the top bar*/
+            width:1200px; /* can use fit-content here as well*/
+            margin:0 auto;
+            height:40px;
+            background-color: #FFFFFF;
+            
+        }
+        #logo{
+            margin-top:5px;
+            width:100px;
+            height:110%;
+            float:left; /*Because we want to put other things to the right of it*/
+            margin-right: 8px;
+            cursor: pointer;
+        }
+
+        .topbar-section{ /* used to puttim top-bar icons in place and putting line in between them*/
+            float:left;
+            border-left: 2px #cccccc solid;
+            height: 100%;
+        }
+
+        #signin-logo{
+            margin-top:1px;
+            width:50px;
+            height:120%;
+            float:left;
+            cursor:pointer;
+        }
+        #signin-text{
+            font-weight: bold;
+            /*margin-top:10px;*//*Margins didn't work with span so we use positioning*/
+            position: relative;
+            top:20px;
+            padding-right:8px;
+        }
+
+        .topbar-menu{
+            font-weight: bold;
+            font-size:100%;
+            padding:20px 15px 0 15px;
+            height: 20px;
+
+        }
+        #search-image{
+            margin-top:10px;
+            width:30px;
+            height:80%;
+            float:left;
+        }
+
+        #search-box{
+            background-color:#E6E8EA;
+            border: none;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 5px;
+            margin: 12px;
+        }
+        
+
+        /* ------------------------------------------- */
+        .clear{
+            clear: both; /*clearing both left and right floats because we are going into next section of the website*/
+        }
+        #menu-bar-full{
+            background-color: #B80000;
+            width:100%;
+            height: 100px;
+        }
+        #menu-bar-inside{
+            width:1200px;
+            margin:0 auto;
+            height:40px;
+        }
+        h1{
+            padding: 0;
+            margin: 0;
+            color: white;
+            font-size: 40px;  
+            position: relative;
+            top:8px  
+        }
+        #menu-bar-sections{
+            width:1200px;
+            margin:0 auto;
+        }
+        .menuBorder{
+            border-left: 1px #cccccc85 solid;
+            height: 40%;
+        }
+        .menuStyle{
+            font-size:100%;
+            margin-top:26px;
+            padding: 5px 9px;
+            color: white;
+            float: left;  
+        }
+        #menu-bar-section a{
+            color: white;
+            text-decoration: none;
+        }
+        #menu-bar-section a:hover{
+            text-decoration: 3px underline solid;
+        }
+
+        #find{
+            float: right;
+            text-align: right;
+            position: relative;
+            left:-50px;
+            top:10px;
+        }
+        #find-local-news{
+            padding:0px;
+            margin-left:5px;
+            font-size: 120%;
+            color: white;
+            font-weight: bold;
+            font-style: italic;
+            border: 1px rgba(255, 255, 255, 0.562) solid;
+            float: right;
+        }
+        #find a{
+            text-decoration: none;
+        }
+        #find a:hover{
+            text-decoration: underline;
+            color:green;
+        }
+        /*--------------------------------------------*/
+        
+        #page{
+            width:1200px;
+            margin: 0 auto;
+        }
+        h2{
+            font-weight: normal;
+            font-size: 20px;
+            border-bottom: 3px rgb(156, 6, 6) solid;
+            width: 43px;
+        }
+        h3 a{
+            color: black;
+            font-size: 30px;
+            text-decoration:none;
+            position: relative;
+            top: 10px;
+        }
+        h3 a:hover{
+            color: rgb(11, 91, 212);
+            position: relative;
+        }
+        #article-sub{
+            color:rgb(128, 128, 128);
+            width: 250px;
+            float: left;
+        }
+        #article-sub img{
+            height: 15px;
+            position: relative;
+            top:2px
+        }
+        #article-sub a{
+            text-decoration: none;
+            color:rgb(128, 128, 128);
+            border-left: 1px rgb(128, 128, 128) solid;
+            padding-left:4px;
+        }
+        #article-sub a:hover{
+            text-decoration: underline;
+            color: #B80000;
+        }
+        #article-container{
+            width:900px;
+            height:70%;
+            border-right: 1px gray solid;
+        }
+        #article-image{
+            width: 550px;
+            height:350px;
+            float:left ;
+            margin-right:25px;
+        }
+        /*--------------------------------------------------------------------*/
+        /* code for right section */
+        #right-section{
+            width: 300px;
+            float: right;
+            position: relative;
+            top:-440px;
+            left:20px
+        }
+        #right-section img{
+            width: 320px;
+            height:160px;
+        }
+        p2 a{
+            text-decoration: none;
+            color: grey;
+            position: relative;
+            top:10px;
+            font-size: 120%;
+        }
+        p2 a:hover{
+            text-decoration: underline;
+            color: #B80000;
+        }
+        p3{ 
+            color:rgb(128, 128, 128);
+            position: relative;
+            top:25px;
+        }
+        p3 a{
+            text-decoration: none;
+            color:rgb(128, 128, 128);
+            border-left: 1px rgb(128, 128, 128) solid;
+            padding-left:4px;
+        }
+        p3 a:hover{
+            text-decoration: underline;
+            color:#B80000
+        }
+        #details{
+            font-size:95%;
+            position: relative;
+            top:-10px;
+        }
+    
+        p5 img{
+            width: 320px;
+            height:160px;
+            position: relative;
+            top:40px;
+        }
+        
+        
+    </style>
+    </head>
+    <body>
+        <div id="top-bar">
+            <img id="logo" src="project news website files/BBC-Logo-1.png">
+
+            <div id="signin" class="topbar-section">
+                <img id="signin-logo" src="project news website files/signinlogo.jpg">
+                <span id="signin-text">Sign in</span>
+            </div>
+            <div class="topbar-section topbar-menu">
+                Home
+            </div>
+            <div class="topbar-section topbar-menu">
+                News
+            </div>
+            <div class="topbar-section topbar-menu">
+                Sports
+            </div>
+            <div class="topbar-section topbar-menu">
+                Reel
+            </div>
+            <div class="topbar-section topbar-menu">
+                Worklife
+            </div>
+            <div class="topbar-section topbar-menu">
+                Travel
+            </div>
+            <div class="topbar-section topbar-menu">
+                Culture
+            </div>
+            <div class="topbar-section topbar-menu">
+                <select style="background: white; border-color:white;font-size: 100%;font-weight: bold;">
+                    <option>More</option>
+                    <option>Football</option>
+                    <option>World</option>
+                    <option>Tech</option>
+                    <option>Cooking</option>
+                </select>
+            </div>
+            <div class="topbar-section">
+                 <!-- to make search logo clickable-->
+                 <input type="image" id="search-image" src="project news website files/glass.png">
+                
+                 <input id="search-box" type="search" placeholder="Search BBC">
+            </div>
+
+        </div> <!-- div of #top-bar-->
+        <!-- ******************************************************************************************** -->
+        <div class="clear"></div>
+        <!-- creating menu bar after topbar-->
+        <div id="menu-bar-full">
+            <div id="find">
+                <input type="search" placeholder="search your city name">
+                <a id="find-local-news" href="">Find local news</a>
+            </div>
+            <div id="menu-bar-inside">
+                <h1>NEWS</h1>
+                <div id="menu-bar-section">
+                        <div class="menuStyle">
+                            <a href="">Home</a>
+                        </div>
+                        <div class="menuBorder menuStyle">
+                            <a href=""> War in Ukraine</a>
+                        </div>
+                        <div class="menuBorder menuStyle">
+                             <a href="">Coronavirus</a>
+                        </div>
+                        <div class="menuBorder menuStyle">
+                            <a href=""> Climate</a>
+                         </div>
+                         <div class="menuBorder menuStyle">
+                            <a href="">Video</a>
+                         </div>
+                         <div class="menuBorder menuStyle">
+                            <a href="">World</a>
+                         </div>
+                         <div class="menuBorder menuStyle">
+                            <a href="">Asia</a>
+                         </div>
+                         <div class="menuBorder menuStyle">
+                            <a href="">Uk</a>
+                         </div>
+                         <div class="menuBorder menuStyle">
+                            <a href="">Business</a>
+                         </div>
+                         <div class="menuBorder menuStyle">
+                            <a href="">Tech</a>
+                         </div>
+                         <div class="menuBorder menuStyle">
+                            <a href="">Science</a>
+                         </div>
+                         <div class="menuBorder menuStyle">
+                            <a href=""> Stories</a>
+                         </div>
+                         <div class="menuBorder menuStyle">
+                            <a href="">Entertainment & Arts</a>
+                         </div>
+                         <div class="menuBorder menuStyle">
+                            <a href="">Health</a>
+                         </div>
+                         <div class="menuBorder menuStyle ">
+                            <select style="background: #B80000;color:white;border-color: #B80000;font-size: 100%;font-weight:normal;">
+                                <option>More</option>
+                                <option>Tricks</option>
+                                <option>Data</option>
+                                <option>Science</option>
+                            </select>
+                        </div>
+                </div>
+            </div>  
+
+        </div>
+    
+        
+         <!-- ************************************************************************ -->
+         <div class="clear"></div>
+         <div id="page">
+            <div>
+                <h2>Tech</h2>
+                <div id="article-container">
+                    <img id="article-image" src="project news website files/uefa.jpg">
+                    <h3><a href="">Crypto.com pulls out of Uefa Champions League deal</a></h3>
+                    <div id="article-sub">
+                        <p>The cryptocurrency exchange site was set to replace Gazprom after Uefa severed links with the Russian energy provider over the war in Ukraine.</p>
+                        <p><img src="project news website files/clock icon.png"> 3 September 2022 <a href="">Technology</a> </p> 
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- ********************************************************-->
+            <!-- code for right side content -->
+            <div id="right-section">
+                <img src="project news website files/twitter.jpg">
+                <p2><a href="https://www.bbc.com/news/technology-62749430" target="_blank">Twitter gives in to user requests for edit button.</a></p2>
+                <p3><br><span id="details">It is currently testing the feature and will roll it out in the coming weeks to subscribers of Twitter Blue, which costs $4.99 (£4.33) per month.</span><br>
+                     4d <a href="">Technology</a>
+                    </p3>
+                
+                <p5><img src="project news website files/nvidia.png"></p5>
+            </div>
+         </div>
+    </body>
+</html>

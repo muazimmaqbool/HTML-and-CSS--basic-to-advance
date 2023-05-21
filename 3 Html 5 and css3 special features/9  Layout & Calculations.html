@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><title> Layout & Calculations</title>
+      <!-- visit w3schools to learn more about layouts-->
+      <style>
+        #multi-column{
+          /*if a browser doesn't support column-count use this :*/
+          /* -webkit-column-count:3; */
+          /* -moz-column-count:3; used for firefox*/
+
+          column-count: 3;
+          /*adjusts the long text in 3 columns*/
+
+          /* adding  column gap */
+
+          /* -webkit-column-gap:3; */
+          /* -moz-column-gap:3; used for firefox*/
+          column-gap: 40px;
+
+          /* adding style between columns*/
+          /*add as well if this doesn't work on your browser , add it everytime*/
+          column-rule-style:solid;
+          column-rule-width: 2px;  /* adding rule is must*/
+          column-rule-color: grey
+        }
+        /*making an element to span certain number of columns like h1*/
+        h1{
+          column-span:all;
+        }
+
+        /* watch at 6:20 */
+        header{
+          width: 100%;
+          height: 50px;
+          background-color: grey;
+        }
+        body{
+          margin: 0;
+        }
+        /*setting height of container 100% but without 50px of header using calc*/
+        #container{
+          width:100%;
+          background-color: yellow;
+          height: calc(100% - 50px); /* space here is must */
+          position: absolute; /*this is must*/
+        }
+
+        /* using flex*/
+        .flex-box-container{
+           display:flex;
+           width: 500px;
+           height: 300px;
+           background-color: aqua;
+
+           /*sets them in reverse order*/
+           /* flex-direction: row-reverse;*/ /* also try column-reverse */
+
+           /*sets items in column manner*/
+           /* flex-direction: column; */
+
+           /*using flex wrap */
+           flex-wrap: wrap; /* if you more more items then excess items will move to next line*/
+        
+         
+          }
+        .item{
+          background-color:beige;
+          width: 100px;
+          height: 100px;
+          margin: 10px;
+           /* here item two got the border so will include that width to flex-box-containers width
+          to make it look same as others*/
+          box-sizing: border-box; /* now to doesn't include the size of the box*/
+        
+        }
+        /*important watch at 11:25*/
+      </style>  
+    </head>
+    <body>
+            <header></header>
+            <div id="container">
+              <!-- flex : a way of aligning things -->
+              <div class="flex-box-container">
+                <div class="item">item1</div>
+                <div class="item" style="border:15px solid grey">item2</div>
+                <div class="item">item3</div>
+                <div class="item">item4</div>
+                <div class="item">item5</div>
+                <div class="item">item6</div>
+              </div>
+            </div>
+           <div id="multi-column">
+            <h1>Layouts in Css</h1>
+            A website can be divided into various sections comprising of header, menus, 
+            content and footer based on which there are many different layout design available 
+            for developer. Different layouts can be created by using div tag and use CSS property 
+            to style it. 
+            The most common structure of website layout is given below:
+            Notice: Header section contains a website logo, a search bar and profile 
+            of user. The navigation menu contains link to various categories of 
+            articles available and content section is divided into 3 parts(columns) 
+            with left and right sidebar containing links to other articles and
+            advertisements whereas the main content section is the one containing
+            this article, then at the bottom there is a footer section which contains address, links, contacts etc. 
+            Header Section: The header section is generally placed either at the 
+            top of the Website or just below a top navigation menu. It often 
+            comprises of the name of the Website or the logo of the Website.
+
+
+
+           </div>
+    </body>
+</html>

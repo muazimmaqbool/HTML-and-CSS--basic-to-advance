@@ -1,0 +1,40 @@
+<html lang="en">
+    <head><title>
+        Absolute positioning</title>
+        <style type="text/css">
+           /* Absolute positioning: An absolutely positioned element is an element whose computed position value is absolute or fixed . The top , right , bottom , and left properties specify offsets from the edges of the element's containing block.
+           It takes element out of the flow of the page */
+            #first{
+                font-size: 150%;
+                background-color: rgb(45, 0, 247);
+                color:rgb(255, 255, 255);
+                width:200px;
+                position:absolute;/*Second section go behind it because Absolute positioning arranges elements out of the flow of the page*/
+                left:100px;
+                top:50px;
+                
+               }
+            #second{
+                font-size: 150%;
+                background-color: aqua;
+                color: chocolate;
+                width:300px;        
+            }
+            
+        </style>
+    </head>
+    <body>
+        <strong>
+
+        <div id="first">
+            <p>This is line 1 in first</p>
+            <p>This is line 2 in first</p>
+        </div>
+
+        <div id="second">
+            <p>This is line 1 in second</p>
+            <p>This is line 2 in second</p>
+        </div>
+    </strong>
+    </body>
+</html>

@@ -1,0 +1,63 @@
+<html lang="en">
+    <head><title>
+        z-index</title>
+        <style type="text/css">
+            #first{
+                font-size: 150%;
+                background-color: rgb(45, 0, 247);
+                color:rgb(255, 255, 255);
+                width:200px; 
+                position:relative; 
+                top:100px;
+                left:100px;
+                /* When two elements over lap with each other one apears in front and other in back
+                and you wanted to change which one appears in front and which one appears in back
+                We use z-index : Element with highest z-index will appear in front
+                Here first section appears in back second section appears in front
+                Lets bring first section in front and second in back by using z-index*/
+                z-index:1;
+               }
+            #second{
+                font-size: 150%;
+                background-color: aqua;
+                color: chocolate;
+                width:200px;
+                position:relative;
+                z-Index:10;
+                     
+            }
+            #third{
+                font-size: 150%;
+                background-color: chartreuse;
+                color: black;
+                width:200px;
+                position: relative;
+                left:150px;
+                top:-105px;
+                z-index: 2;  
+                /* Now this div is on the top as it has the highest z-index*/
+
+                /*Note z-index won't work without setting its position to relative*/
+            }
+            
+        </style>
+    </head>
+    <body>
+        <strong>
+
+        <div id="first">
+            <p>This is line 1 in first</p>
+            <p>This is line 2 in first</p>
+        </div>
+
+        <div id="second">
+            <p>This is line 1 in second</p>
+            <p>This is line 2 in second</p>
+        </div>
+        <div id="third">
+            <p>This is line 1 in third</p>
+            <p>This is line 2 in third</p>
+        </div>
+    </strong>
+    </body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables in CSS</title>
+    <!-- visit: https://www.youtube.com/watch?v=cfDV6iGXPMY&t=1s and https://www.w3schools.com/css/css3_variables.asp -->
+    <!--
+        Variables in CSS:
+        ->A good way to use CSS variables is when it comes to the colors of your design. Instead 
+        of copy and paste the same colors over and over again, you can place them in variables.
+        
+        ->CSS variables have access to the DOM, which means that you can create
+          variables with local or global scope, change the variables with JavaScript, 
+          and change the variables based on media queries.
+        
+        ->The var() function is used to insert the value of a CSS variable
+
+        ->Syntax of the var() Function: var(--name, value)
+                Value	Description
+                name	Required. The variable name (must start with two dashes)
+                value	Optional. The fallback value (used if the variable is not found)
+                Note: The variable name must begin with two dashes (--) and it is case sensitive!
+    -->
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      /*Global variables: they are accessible inside every element every class 
+         they are not defined inside any class/element 
+         -> they are defined in root element which is html and to define global variables we use
+                    :root{
+                      global variables are defined here
+                    }
+                    */
+       :root{
+        --varPX:10px;
+        /*this is accessible inside every element h2,h1,box etc..*/
+        --varCL:grey;
+       }
+      .container{
+        padding: 40px;
+        --var1:white;
+        /* --var1 is also local variable it can be applied to any child of container class 
+          it can be applied inside box class as well        
+        */
+          
+        /*
+      Note: we can have local and global variable with same name 
+      */
+      --var2:italic;
+      /*can use --var2 on any child of container class */
+      }
+      h1{
+        text-align: center;
+        /* color: var(--my-var); *//* as --my-var is local variable it won't work here */
+      /*
+      Note: if element doesn't gets the variable due to some reasons/or it may be local variable
+           for that reason we define fall back after variable like this --my-var,green
+           //here it --my-var is local variable so it won't work then it will use green color
+      */
+      background-color: var(--my-var, green); /*h1 will have green color*/
+
+      color: var(--var1);/*h1 will have white color*/
+      /*var1 will work as its global variable but var1 is local for container class */
+
+      font-style: var(--var2);
+      /*h1 will have italic font styling*/
+
+      letter-spacing: var(--varG);
+        /*latter-spacing is 2px as --varG is 2px - its global variable*/
+      
+      }
+      .box{
+        /*creating local variable*/
+        --my-var: brown; 
+        /* now this --my-var can be useed on any element which is inside box div like on h1*/
+        padding: 20px;
+        /* background-color: brown; */
+        /* background-color: var(--my-var); */
+
+        --var2:monospace;
+        /*here --var2 is local variable with value bold : this will work only on childrens of box */
+      }
+      h2{
+        margin-bottom: 20px;
+        background-color: var(--my-var);
+        /* using local variable here*/
+
+        color:var(--var1);/*h2 will also have white color*/
+        /*using global variable*/
+
+        font-family: var(--var2);
+        /*Here h2 wil have monospoace as font family , --var2 is local for h2 although there is
+         global variable also --var2 but here h2 is child of box and inside box --var2 is monospace
+         and is local so h2 will be monospace*/
+         letter-spacing: var(--varG);     
+      }
+      p{
+        color:var(--varCL);
+      }
+
+      /*Changing variable values inside media queries */
+      @media screen and (min-width: 500px) {
+          .container{
+            --var1:yellow;
+            /*--var1 is initially white but when width becomes 500px of more it changes to blue */
+          }
+          .box{
+            --var2:cursive;
+            /*--var2 changes from monospace to cursive*/
+          }
+      }
+      @media screen and (max-width:300px) {
+         .box{
+          --my-var:grey;
+          /*--my-var changes form brown to grey when width becomes 300px or less than 300px*/
+         }
+      }
+      /*we can also changes variables using javascript*/
+    </style>
+</head>
+<body>
+    <div class="container">
+      <h1>Inside Container</h1>
+      <div class="box">
+        <h2>Inside Box</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod atque error doloremque necessitatibus quis rerum culpa voluptatem praesentium odit. Cumque.
+        </p>
+      </div>
+    </div>
+</body>
+</html>

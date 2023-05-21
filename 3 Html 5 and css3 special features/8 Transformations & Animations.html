@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><title>Transformations & Animations</title>
+        <!-- study more on them in w3schools-->
+        <!-- they look good when combined with pseduo elements like hover-->
+    <style>
+        #box{
+            width:200px;
+            height: 200px;
+            margin: 50px;
+            background-color: chocolate;
+            border-radius: 10px;
+            font-family: "arial";
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 200%;
+
+            /* transform: translate(50px, 50px);  */
+            /*moving it 50px to right and 50px down , but they work better with hover*/
+            
+            transition: 1s ease-in-out;
+           
+                   /*ease-in-out means , its starts slowly then gets fast and then slows down in the end*/
+                    /* also use ease-in, ease-out, ease, linear*/
+            }
+        #box:hover{
+            /* transform: translate(50px, 50px);  */
+            /*now when we hover on box the box moves */
+
+            /* transform:rotate(40deg); */
+
+            /* transform:scale(2,4);  */
+            /*makes it big in x and y direction | 2 in x direction and 4 in y direction*/
+            /* transform:scale(2); */
+
+            /* transform:skew(20deg,30deg); */
+            /*this gives stretch effect*/
+            /* transform: skew(50deg); */
+
+            /* 3D transformation */
+
+            /* transform:rotateX(180deg); */
+
+            /* transform: rotateY(150deg); */
+            transform:rotateZ(180deg);
+           
+            
+        }
+    </style>
+    </head>
+    <body>
+        <div id="box">
+            BOX
+        </div>
+    </body>
+</html>

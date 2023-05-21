@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float and Clear in CSS</title>
+    <!--
+        visit: https://www.youtube.com/watch?v=FQfNAOwzp5Y at 3:25
+
+    -> CSS Float: 
+            The CSS Float property specifies how an element should float
+                float values: left, right, none, inhert
+    -> CSS Clear:
+            The clear property is used to specify which side of floating elements are not allowed to float.
+                clear values: left, right, bottom, none, inherit,both
+        -->
+    <style>
+        .container{
+            border: 3px solid blueviolet;
+        }
+        /*after adding image and text in div the text will come below the image so, if you wan to put text
+        after image you have to make image float :*/
+        .img1{
+            /*float:left;*/ 
+            /* now text will come on left side of image */
+            /* also try for float:right*/
+            float: right;
+        }
+        .img2{
+            float: left;
+        }
+        .p1{
+            border: 2px solid green;
+            clear:right; 
+            /*now this p1 will come on the below of image 1*/
+        }
+        /* .block1{
+            overflow: auto; /*now block will take height according to content
+        } */
+        .p2{
+            /*here after removing block1 : this paragraph 2 is comming in the left side of image 2
+            and to make this paragraph below it use clear property*/
+            /* clear:right;  */
+            /*means "right wale flow ko clear karoo" *//*now it won't flow in the right side with image 2*/
+            
+            /*now it comes on the left side of image2 and to clear that flow we use clear:left (left side ke flow ko clear karoo)*/
+            /* clear: left; */
+
+            clear:both; /*clears flow on both sides*/
+        }
+    </style>
+    <!-- Important :
+        Note:-> remember use "clear and float" property only with "image and text" to align them
+            -> to align your "layout" we use flex,grid,etc
+
+        Do visit css-tricks.com
+    -->
+</head>
+<body>
+    <div class="container">
+        <div class="block1">
+            <img class="img1" src="http://via.placeholder.com/150" alt=""><!-- http://via.placeholder.com/100 brings 150x150 image on screen remember 
+                this website used for placing dummy images and you can put any value in place of 100 and you can also use 200x100 or any number x anynumber-->
+            <p class="p1">Lorem ipsum dolor ?</p>
+        </div>
+        <!-- adding more images and text -->
+        <img class="img2" src="http://via.placeholder.com/100" alt="">
+        <p class="p2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque minus commodi magni distinctio assumenda inventore tempore suscipit molestias, est sed culpa at dolorum natus fugiat eos nemo iure! Facilis, iure velit nisi neque hic laborum aliquid doloremque qui consequuntur, unde reiciendis dolorem repellendus. Accusamus dolorem magni neque illo architecto laborum laboriosam alias, fuga dolorum autem ipsam iure ratione delectus placeat voluptatum minima quia assumenda voluptates accusantium dolor animi aut impedit? Modi quisquam unde id minima sit corporis, dolor animi veritatis. Blanditiis, ad. Optio praesentium dolor earum sint ducimus architecto sit repudiandae consequuntur, quidem maxime blanditiis iste tempora ipsum numquam nam asperiores eos laboriosam cupiditate expedita doloremque? Quod incidunt, velit voluptate, consequuntur atque fuga harum, dolore excepturi impedit veniam aperiam perferendis! Nisi pariatur accusamus qui tempora porro, modi quibusdam aliquam unde illum animi asperiores accusantium. Repudiandae expedita quod esse itaque laborum minus at a voluptatem aspernatur consequatur iste nisi, nemo pariatur?</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<html lang="en">
+    <head>
+         <title>Padding</title></title>
+         <!--An element's padding area is the space between its content and its border. Note: Padding creates extra space within an element. In contrast, margin creates extra space around an element.-->
+         <style type="text/css">
+            /*padding is space between the edge of the element and the content inside it*/
+            #first{
+                font-size: 150%;
+                background-color: rgb(45, 0, 247);
+                color:rgb(255, 255, 255);
+                width:200px;
+                padding:10px; 
+                margin: 20px;
+            }
+            #second{
+                font-size: 150%;
+                background-color: aqua;
+                color: rgb(0, 0, 0);
+                width:250px; 
+                /*padding-left: 10px;
+                padding-bottom: 20x;
+                padding-right: 25px; 
+                padding-top: 50px;  or */
+               padding: 50px 25px 20px 10px;/*top right bottom left*/
+                /*Now its total width will be 250px + 25px+10px = 285px , padding lies on top of the width*/
+
+            }
+            #third{
+                font-size: 150%;
+                background-color: rgb(0, 0, 0);
+                color: rgb(210, 30, 30);
+                width:300px;
+            }
+            /*Most browsers have default white spaces around the boxes and to get rid of that do this :*/
+            body{
+                margin:0;
+                padding:0;
+                background:rgb(167, 187, 131);
+            }
+            p{ 
+                margin:0;
+                padding:0;
+            }
+            /*Check -> what is css reset ?*/
+         </style>
+    </head>
+    <body>
+        <strong>
+
+            <div id="first">
+                <p>This is line 1 in first</p>
+                <p>This is line 2 in first</p>
+            </div>
+    
+            <div id="second">
+                <p>This is line 1 in second</p>
+                <p>This is line 2 in second</p>
+            </div>
+            <div id="third">
+                <p>This is line 1 in third</p>
+                <p>This is line 2 in third</p>
+            </div>
+
+        </strong>
+    </body>
+</html>

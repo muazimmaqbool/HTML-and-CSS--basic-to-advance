@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loader Animation</title>
+    <style>
+        body{
+            margin: 0;
+            background-color: teal;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 100px;
+        }
+        .container{
+            width: 300px;
+            height: 300px;
+            border: 2px solid white;
+            animation: orbit 4s linear infinite;
+            border-radius: 50%; /*makes container circle */
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            border-radius: 50%;
+        }
+
+        .loader{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .dot{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: white;
+
+            animation: up-down 0.8s ease infinite alternate;
+        }
+        .dot:nth-child(2){
+            animation-delay: 0.1s;
+            background-color: red;
+        }
+        .dot:nth-child(3){
+            animation-delay: 0.2s;
+            background-color: yellow;
+        }
+        .dot:nth-child(4){
+            animation-delay: 0.3s;
+            background-color: green;
+        }
+
+        /*makes element to rotate */
+        @keyframes orbit {
+            from{
+                transform: rotate(0);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes up-down {
+            from{
+                transform: translateY(-10px);
+            }
+            to{
+                transform: translateY(10px);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+
+    <div class="loader">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+</body>
+</html>

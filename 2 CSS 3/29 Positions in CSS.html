@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positions in CSS</title>
+    <!-- visit: https://www.youtube.com/watch?v=jo3RB0oBhXI&list=PLhzIaPMgkbxDxVcH-M-JFM73PY1R_i2mK&index=21
+           https://www.w3schools.com/cssref/pr_class_position.php 
+    ->The position property specifies the type of positioning method used for an element (static, 
+    relative, absolute, fixed, or sticky).
+    CSS Syntax:
+    position: static|absolute|fixed|relative|sticky|initial|inherit;
+
+    Note: by default in html the positioning of each element is static
+    -> static which does not renders the element in any special way, but in a normal way.
+    -> Elements with positioning as static are not affected by any of the CSS Positioning properties (left, right, top and bottom).
+-->
+    <style>
+        body{
+            color:white;
+            font-size: medium;
+            font-weight: bold;
+            text-align: center;
+        }
+        .container{
+            width: 300px;
+            height: 600px;
+            background-color: grey;
+            margin: 100px;
+            /* position: relative; */
+             /* used to explain absolute positiong in green class */
+        } 
+        .box{
+            height: 100px;
+            width: 100px;
+        }
+        .red{
+            /*take a look at code no. 7 */
+            background-color: red;
+            position: relative; /*relative to its normal position or position: relative places an element relative to its current position without changing the layout around it*/
+            top: 180px; /*move down from top 180px*/
+            left:100px; /*move to right from left 100px*/
+            /* right:100px*/ /* move to left from right 100px */
+            /*also try for bottom as well : we can use -ve values as well 
+                    i.e top:-50px means it will go up 50px rather than going down illy with all direction*/
+        }
+        .green{
+            background-color: green;
+            /*Note: absolute works relative to parent which is relative (if you make container relative it will
+            work according to container)*/
+            /*absolute will look which of its parent is relative and work according to that parent if not found anyone
+            then will work according to html/root which is by default relative*/
+            position: absolute; /*Goes out from normal flow of html */
+            /* i.e goes out from the container as by default container is static not relative but if you make container relative it will work according to container*/
+            top:20px;
+            left:10px;
+        }
+        .blue{
+            background-color: blue;
+        /*fixes it at one place or An element with position: fixed; is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled. */
+        /*to understand fixed , we make another div with class spacer and gives it height 300vh and
+         we scroll it and blue box will be fixed at one place */
+           position: fixed; /*it will work relative to the root , we can also change its position but it will be fixed at positions*/
+           right:500px; 
+           top: 200px;
+        
+        }
+        .orange{
+            background-color: orange;
+            /*sticky; is positioned based on the user's scroll position. A sticky element toggles between relative and fixed , depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed).*/
+            /*it will stick but jaise hee hum scroll kare ge aur jaise hee isk parent bahar hoga view se ye b bahar nikle ga parent ke sath he*/
+            position: sticky;
+            top:50px;  /*when we scroll it will be 50px down from top from its parent(container) */
+        }
+        .spacer{ /* used for scrolling to check fixed positioning*/
+            height: 300vh;;
+        }
+        /*watch at 16:00 */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box red">Relative</div>
+        <div class="box green">Absolute</div>
+        <div class="box blue">Fixed</div>
+        <div class="box orange">Sticky</div>
+    </div>
+    <div class="spacer"></div>
+</body>
+</html>
+<!--
+                  Important:
+    Property Values:
+
+    Value	         DescriptionDemo
+    
+    static	     Default value. Elements render in order, as they appear in the document flow	
+    
+    absolute	The element is positioned relative to its first positioned (not static) ancestor element	
+    
+    fixed	    The element is positioned relative to the browser window	
+    
+    relative	The element is positioned relative to its normal position, so "left:20px" adds 20 pixels to the element's LEFT position	
+    
+    sticky	    The element is positioned based on the user's scroll position
+                A sticky element toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed).
+                Note: Not supported in IE/Edge 15 or earlier. Supported in Safari from version 6.1 with a -webkit- prefix.	
+    
+    initial	   Sets this property to its default value. Read about initial	
+    
+    inherit	   Inherits this property from its parent element. Read about inherit
+-->

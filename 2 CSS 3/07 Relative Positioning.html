@@ -1,0 +1,53 @@
+<html lang="en">
+  <head>
+    <title>Relative Positioning</title>
+    <!-- Floating has the advantage of to be very flexible however wide the screen is , it can float to the edge of the screen
+        Sometime you want to know exactly what is the position of your element and that's where positioning comes in-->
+    <style type="text/css">
+      #first {
+        font-size: 150%;
+        background-color: rgb(45, 0, 247);
+        color: rgb(255, 255, 255);
+        width: 200px; /* 200 and 200px is same but 200% is different */
+        position: relative; /* positioned relative to its normal position. relatively-positioned element will cause it to be adjusted away from its normal position*/
+        left: 200px;
+        /*left:200px: will move it to right and will leave 200px margin from the left
+                That's why it moved to the right*/
+        /*Lets move it to left use -ve i.e -50px*/
+        left: -50px; /*Moves to right as we mentioned -ve sign
+                it will move from its original position*/
+        /* to move right use +ve and to move left use -ve with left;*/
+
+        /*lets move it down*/
+        top: 100px; /*moves it down with 100px margin from the top*/
+        top: -50px; /*moves it up as we use -ve sign*/
+        /*moving it back to 100px right and 200px down*/
+        left: 100px;
+        top: 200px;
+      }
+      #second {
+        font-size: 150%;
+        background-color: aqua;
+        color: chocolate;
+        width: 200px;
+        position: relative;
+        left: 100px; /* moves it right*/
+        top: -100px; /*moves it up */
+        /*its 100px right and 100px up*/
+      }
+    </style>
+  </head>
+  <body>
+    <strong>
+      <div id="first">
+        <p>This is line 1 in first</p>
+        <p>This is line 2 in first</p>
+      </div>
+
+      <div id="second">
+        <p>This is line 1 in second</p>
+        <p>This is line 2 in second</p>
+      </div>
+    </strong>
+  </body>
+</html>

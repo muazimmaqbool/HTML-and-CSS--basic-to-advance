@@ -1,0 +1,46 @@
+<html lang="en">
+    <head><title>Before and After</title>
+    <style type="text/css">
+        /*Insert some text before and after the content of each <p>(or some other) element:
+            The ::before selector inserts something before the content of each selected element(s).
+                Use the content property to specify the content to insert.
+                Use the ::after selector to insert something after the content.
+            
+            ::after and ::before doesn't work with images
+                */
+            p{
+                font-size:20px;
+                font-weight: bold;
+                margin-top: 30px;
+                margin-left: 20px;
+                width: fit-content;
+            }
+            p::before{
+                content: 'before text ';
+                color: green;
+            }
+            /* p::after{
+                content: ' after text';
+                color: azure;
+                background-color: black;
+            }  */
+
+            
+            p:hover::after{
+                content: ' after text using hover';
+                color: azure;
+                background-color: black;
+            } 
+            /*p:hover .p::after will not work but p:hover::after will work*/
+
+            h2:hover::before{
+                content: "Hello ";
+                color: teal;
+            }
+    </style>
+    </head>
+    <body>
+        <p>This is CSS before and after property</p>
+        <h2>This is heading 2</h2>
+    </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><title>Units in CSS</title>
+    <style>
+        main{
+           border:3px solid blue; 
+           /*percentage (its relative unit )*/
+           /* width: 50%;  */
+           /*main will take 50% width of its parent , it's parent is body
+           percentage is used when you want to give percentage in corresponding to parents */
+
+           /* vw: view width (its absolute unit) vh means view heigh (vh is also absolute )*/
+           /*vw is corresponded with root/body not its parent*/
+           width: 50vw; 
+           /*will take full 100% of view i.e full screen so 100vw is 100% and 50vw is 50%*/
+        }
+        section{
+            border: 2px dashed brown;
+            width: 50%;
+            /*section will take 50% of main as its the child of main */
+            
+            /*for vw/vh*/
+            /* width: 50vw;  */
+            /*will take 50% of total width of page/body and not of main*/
+
+        }
+        /*rem : rootem : relative to the root (root is html)*/
+        h1{
+            font-size: 4rem; /*1rem = 16px  */
+        }
+        /*use rem in font size always and always use px in border*/
+        /*if you want to make your font work according to width use vw*/
+    </style>
+    </head>
+    <body>
+        <!--https://www.w3schools.com/cssreF/css_units.php and https://www.youtube.com/watch?v=Fwfg0UyMOJE -->
+        <!-- CSS has several different units for expressing a length. -->
+        <header>
+            <h1>h1 = 32px</h1>
+        </header>
+        <main>
+            <section>
+                <h3>h3 = 18.72px</h3>
+                <p>p = 16px </p>
+            </section>
+        </main>
+    </body>
+</html>
+<!-- 
+    -> % is Relative to the parent element 
+    -> vw Relative to 1% of the width of the viewport*
+    -> px : pixel : they depend on DPR(Density pixel ratio) 
+    
+
+-->

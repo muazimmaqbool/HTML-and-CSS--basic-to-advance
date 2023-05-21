@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Container</title>
+    <!-- first see previous program
+    ->Flex Container: flex container becomes flexible by setting the display property to flex
+            flex container properties: flex-direction,flex-wrap,flex-flow,justify-content,align-items,
+                                        align-content
+    -->
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+    }
+    .container{
+        height: 400px;
+        border: 2px solid rebeccapurple; 
+        display: flex;
+        gap: 10px;
+        /*in both directions row and column */
+        /*gap is defined in container , gap puts gap/space in elements(in childs)
+        we can also use row-gap and column-gap - gap can't be used before display-flex */
+        
+
+    /* -> flex-direction*/
+        /* flex-direction:column;  */
+        /*aligns its items/childrens vertically*/
+
+        /* flex-direction: row-reverse; */
+        /*Items filled from right side     i.e box8,box7,...box1*/
+
+        /* flex-direction: column-reverse; */
+        /*Items filled from bottom side */
+
+    /* -> flex-wrap : sets whether flex items are forced onto one line or can wrap onto multiple lines. while changing size of window*/
+         /*by default it's no-wrap*/
+        
+        /* flex-wrap: wrap; */
+        /*Now when the screen size starts becoming small they will stack on top of each other instead of shrinking their width*/
+
+        /* flex-wrap:wrap-reverse; */        /*used very less */
+        /*Now they will wrap in reverse order they will on top of each other but in reverse order*/
+
+    /* -> flex-flow: this is shorthand property for flex-direction and flex-wrap*/
+        flex-flow: wrap row;
+        /*means wrap and direction:row and also try : flex-flow: wrap column;*/
+
+    /* ->  justify-content : Mostly used , can justify any children along main-axis (i.e long x-axis )
+        /*to use justify content vertically then first change flex-direction to column*/
+        
+        /* justify-content:space-around ;  */
+        /*space around the content on both left and right sides and this space-around changes accoding to the size of screen*/
+
+        /* justify-content: space-between; */
+        /*puts space in between the contents and not on start and end*/
+
+        /* justify-content: flex-start; */
+        /*aligns all elements on the left side : this is by default also*/
+
+        /* justify-content: flex-end; */
+        /*aligns all elements on the right side*/
+
+        justify-content: center;
+        /*All elements/children will come in the center*/
+
+    /* -> align-items : used to align elements along cross-axis i.e along y-axis */
+        /*default value of align-items is stretch (that's why you will see each box taking whole height of the container)*/
+
+        /* align-items:center; */
+        /*they will come on center vertically*/
+
+        /* align-items: flex-start;  */
+        /*they will come on start vertically i.e they will be on top on y-axis i,e cross-axis*/
+
+        /* align-items: flex-end; */
+         /*they will on end vertically i.e they will be on bottom on y-axis i,e cross-axis*/
+
+     /* -> align-content: sets the distribution of space between and around content items along a flexbox's cross-axis or a grid's block axis*/
+        /*watch at 17:00 */
+        /* align-content: flex-start; */
+        /* align-content: flex-end; */
+        /* align-content: space-between; */
+        /* align-content: flex-start; */
+        /* align-content:space-evenly; */
+        
+    }
+    .box{
+        border: 2px solid green;
+        width: 80px;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+        <div class="box">box4</div>
+        <div class="box">box5</div>
+        <div class="box">box6</div>
+        <div class="box">box7</div>
+        <div class="box">box8</div>
+    </div>
+</body>
+</html>

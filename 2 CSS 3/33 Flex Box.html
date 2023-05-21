@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexBox in CSS</title>
+</head>
+<!-- visit: https://www.youtube.com/watch?v=oJXmXzfjrBY and https://www.w3schools.com/css/css3_flexbox.asp 
+    -> The Flexible Box Layout Module, makes it easier to design flexible responsive layout
+        structure without using float or positioning.
+    -> In modern web development we use flex , this is the actually way of making layout
+    -> its used to make design flexible and responsive
+    -> To use Flex we need container/parent and some children in it
+
+-->
+<!--
+    Important:
+    -> the horizontal axis(i.e x-asix) is known as "Main Axis" (justify-content)
+    -> the vertical axis(y-axis) is known as "Cross Axis" (align-items)
+    Note: Flex is mostly done along Main Axis
+-->
+<style>
+    .container{
+        height: 400px;
+        border: 2px solid rebeccapurple;
+        /* the child inside it are : box1, box2, box3,...box8 vertically */
+        display: flex; 
+        /*Now the container will become flexbox and everything inside it will be its children i.e children of flex*/
+        /*and by default the children of flex parent will be inline on main axis(i.e x-axis) (i.e now its child are like: box1, box2, box3,...box8 horizontially )*/
+       /*if want to change the axis of flex for that you have to change main axis into cross asix i.e x-asix to y-axis 
+       and this is done by changing flex-direction:column and by default its flex-direction:row;*/ 
+
+        flex-direction: column; 
+        /*now they are flex vertically*/
+    }
+    .box{
+        border: 2px solid green;
+        margin: 10px 0;
+    }
+</style>
+<body>
+    <!-- also try .container>.box*8{$}-->
+    <div class="container">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+        <div class="box">7</div>
+        <div class="box">8</div>
+    </div>
+    </div>
+</body>
+</html>

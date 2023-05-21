@@ -1,0 +1,60 @@
+body{
+    background-color: pink;
+}
+/*main chahta hoon jab width 400px ya isse kamm hoo aus waqt ye wali style apply honi chahiye*/
+@media (width <=400px){
+    body{
+        background-color: blue;
+        /*this will be applied when width becomes 400px or less than 400px*/
+    }
+}
+
+@media (width < 300px){
+    body{
+        background-color: green;
+        /*this will be applied when width becomes less than 300px*/
+    }
+}
+
+/*
+ NOTE: the syntes @media (width<=400px) -> this syntex is recently introduced in 
+                                                            @media Queries version 4
+        Before this we used this syntax:
+            @media (max-width:200px) 
+             ->apply this condition when max-width becomes 200px or less 
+    ->We can still use this syntax
+    lets use this syntax:
+NOTE: its good to use max-width and min-width
+*/
+@media (max-width:200px){ /*applies when screen size becomes 200px or less*/
+    body{
+        background-color: gold;
+    }
+}
+/*we also have min:width like this*/
+@media (min-width:500px){
+    body{
+        background-color: blueviolet;
+        /*this will be applied when width becomes 500px or more than 500px*/
+    }
+}
+
+@media (min-width:650px){
+    body{
+        background-color: peru;
+        /*this will be applied when width becomes 650px or more than 650px*/
+    }
+}
+
+
+
+
+/*media queries on the basis of orientation */
+/* orientation becomes portrait when height is more than its width
+and when width is more than its height then it becomes landscape mode*/
+
+/* @media (orientation: portrait){
+    body{
+        background-color: black;
+    }
+} */

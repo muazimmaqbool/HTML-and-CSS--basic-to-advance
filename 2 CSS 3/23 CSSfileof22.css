@@ -1,0 +1,29 @@
+
+        p{
+            font-size: 150%;
+        }
+        .bold{
+            font-weight: bold;
+        }
+        .italic{
+            font-style: italic;
+        }
+        .underline{
+            text-decoration:underline;
+        }
+        a{ 
+            text-decoration: none; 
+        }
+        a:hover{
+            text-decoration: underline;
+            color: green;
+            font-size: 150%;
+        }
+        .big{
+            font-size: 250%;
+        }
+        .clor{
+            background-color: black;
+            color: beige;
+            width: fit-content;
+        }

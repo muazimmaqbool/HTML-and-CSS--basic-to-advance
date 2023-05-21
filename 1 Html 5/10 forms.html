@@ -1,0 +1,48 @@
+<!-- Forms made our page to be interactive -->
+<!--
+    The <form> element is a container for different types of input elements, such as: text fields, 
+        checkboxes, radio buttons, submit buttons, etc...
+-->
+<html lang="en">
+    <head><title>Forms</title></head>
+    <body>
+        <form>
+            <strong>Name: </strong><input type="text" value="full name">
+            <p>Phone Number:<input type="number" placeholder="7899******"></p>
+            <!-- its good to use placeholder in place of value-->
+
+            <p>Under 18: <input type="radio" name="age"></p>
+            <p>above 18: <input type="radio" name="age"></p> 
+            <!-- or  <p>above 18: <input type="radio" name="age" checked></p>-->
+            <!-- use name value to select only one in radio button
+            if you use different name value in name it will choose both -->
+
+            <p>FastFood: <input type="checkbox"></p>
+            <p>Fit Food: <input type="checkbox" checked></p>
+            <!-- checked is used to mark checkbox by default-->
+
+            <p>Payment Method
+                <select><!-- used for drop down-->
+                    <option>Cash</option>
+                    <option>Online</option>
+                    <option>Debit Card</option>
+                </select>
+            </p>
+            <p>Select Food
+                <select>
+                    <option>Briyani</option>
+                    <option>Coffee</option>
+                    <option selected>Pizza</option><!-- selected used to select this option by default-->
+                    <option>Burger</option>
+                    <option>Sandwiche</option>
+                    <option>Egg Role</option>
+                    <option>Rista</option>
+                    <option>Fried Chicken</option>
+                </select>
+            </p>
+            <p>Confirm: <input type="checkbox" required></p>
+            <p><input type="submit"></p>
+            <p><input type="submit" value="Click Me to exit"></p><!-- submit button with different text-->
+        </form>
+    </body>
+</html>
